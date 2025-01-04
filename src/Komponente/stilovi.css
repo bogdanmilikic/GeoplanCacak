@@ -12,8 +12,8 @@ body {
 }
 
 .logo {
-  width: 130px;
-  height: 120px;
+  width: 120px;
+  height: 110px;
   border-radius: 0;
   margin-bottom: -5px;
 }
@@ -22,7 +22,7 @@ body {
   margin: 0;
   padding: 0;
   background-color: rgb(169, 222, 254);
-  height: 120px;
+  height: 110px;
 }
 
 .gornjiDeoMenu {
@@ -31,18 +31,30 @@ body {
 
 .gornjiDeoDugmici {
   margin-top: 0;
+  margin-right: 15px;
   margin-left: 15px;
   border: 0px;
-  width: 80px;
+  width: 90px;
   padding: 2px;
   background-color: transparent;
   color: rgb(18, 27, 58);
+  text-align: left;
+  transition: all 0.2s ease-in-out;
 }
 .gornjiDeoDugmici:hover {
   color: white;
   background-color: rgb(76, 95, 163);
-  border-radius: 2px 2px 0px 0px;
-  width: 100px;
-  font-size: 20px;
-  transition: all 0.2s ease-in-out;
+  border-radius: 8px 8px 0px 0px;
+  width: 120px;
+  font-size: 15px;
+}
+.gornjiDeoDugmiciAktivno {
+  color: white;
+  background-color: rgb(76, 95, 163);
+  border-radius: 8px 8px 0px 0px;
+  width: 120px;
+  font-size: 15px;
+  border: 0px;
+  padding: 2px;
+  text-align: left;
 }
