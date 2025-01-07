@@ -7,6 +7,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 import { useState } from "react";
+import { faCheckToSlot } from "@fortawesome/free-solid-svg-icons/faCheckToSlot";
 const GornjiDeo = ({ slika }) => {
   const [aktivno, setAktivno] = useState(0);
   const handleInfo = () => {
@@ -15,8 +16,11 @@ const GornjiDeo = ({ slika }) => {
   const handleKontakt = () => {
     setAktivno(2);
   };
-  const handleZakazivanje = () => {
+  const handleUsluge = () => {
     setAktivno(3);
+  };
+  const handleZakazivanje = () => {
+    setAktivno(4);
   };
   return (
     <div class="gornjiDeoDiv">
@@ -29,9 +33,12 @@ const GornjiDeo = ({ slika }) => {
           {" "}
           <FontAwesomeIcon icon={faContactCard} /> Kontakt
         </Dugmici>
+        <Dugmici aktivno={aktivno} brojDugmeta={3} handleUradi={handleUsluge}>
+          <FontAwesomeIcon icon={faCheckToSlot} /> Usluge
+        </Dugmici>
         <Dugmici
           aktivno={aktivno}
-          brojDugmeta={3}
+          brojDugmeta={4}
           handleUradi={handleZakazivanje}
         >
           {" "}
