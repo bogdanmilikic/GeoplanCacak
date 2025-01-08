@@ -4,7 +4,12 @@ import stilovi from "./Komponente/stilovi.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStreetView } from "@fortawesome/free-solid-svg-icons/faStreetView";
 import { faPhone } from "@fortawesome/free-solid-svg-icons/faPhone";
-import { faEnvelope, faMap } from "@fortawesome/free-solid-svg-icons";
+import {
+  faChevronCircleUp,
+  faEnvelope,
+  faMap,
+} from "@fortawesome/free-solid-svg-icons";
+import { faArrowAltCircleUp } from "@fortawesome/free-solid-svg-icons/faArrowAltCircleUp";
 
 const sadrzajNiz = [
   <div className="divSadrzaj">
@@ -80,7 +85,15 @@ const sadrzajNiz = [
   </div>,
 ];
 function App() {
-  const [sadrzaj, setSadrzaj] = useState("Izaberite jednu od opcija");
+  const [sadrzaj, setSadrzaj] = useState(
+    <div className="divSadrzaj">
+      <p className="sadrzaj">
+        <FontAwesomeIcon icon={faChevronCircleUp} />
+        {"    "}Izaberite jednu od opcija{"    "}
+        <FontAwesomeIcon icon={faChevronCircleUp} />
+      </p>
+    </div>
+  );
   const [animate, setAnimate] = useState(false);
 
   useEffect(() => {

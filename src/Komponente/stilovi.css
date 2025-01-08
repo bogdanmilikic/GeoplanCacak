@@ -88,8 +88,8 @@ body {
 
   align-items: center;
   width: auto;
-  padding-left: 100px;
-  padding-right: 100px;
+  padding-left: 30px;
+  padding-right: 30px;
   background-color: gray;
   border-radius: 30px;
   height: auto;
@@ -111,7 +111,7 @@ body {
 iframe {
   width: 1000px;
   height: 450px;
-  border-radius: 30px;
+  border-radius: 25px;
   border: none;
   justify-content: center;
   align-items: center;
