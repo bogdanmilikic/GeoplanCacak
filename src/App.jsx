@@ -89,6 +89,7 @@ const sadrzajNiz = [
 
 function App() {
   const [openPopUp, setOpenPopUp] = useState(false);
+  const [sifra, setSifra] = useState("");
   const [popUpSadrzaj, setPopUpSadrzaj] = useState(undefined);
   const [userName, setUserName] = useState("Prijava");
   const [naslov, setNaslov] = useState(undefined);

@@ -3,7 +3,14 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
 
-const SignUp = ({ eMail, setEmail }) => {
+const SignUp = ({ eMail, setEmail, setSifra }) => {
+  const handleSendEmail = (e) => {
+    if (eMail === "") {
+      alert("Unesite vašu e-mail");
+      setEmail(undefined);
+    } else {
+    }
+  };
   const handleEmail = (e) => {
     setEmail(e.targe.value);
   };
