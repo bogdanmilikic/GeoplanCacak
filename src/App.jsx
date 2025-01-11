@@ -9,7 +9,8 @@ import {
   faEnvelope,
   faMap,
 } from "@fortawesome/free-solid-svg-icons";
-import { faArrowAltCircleUp } from "@fortawesome/free-solid-svg-icons/faArrowAltCircleUp";
+import LogInDugme from "./Komponente/LogInDugme";
+import PopUp from "./Komponente/PopUp";
 
 const sadrzajNiz = [
   <div className="divSadrzaj">
@@ -48,6 +49,7 @@ const sadrzajNiz = [
           allowfullscreen=""
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
+          title="Lokacija"
         ></iframe>
       </center>
     </p>
@@ -84,7 +86,12 @@ const sadrzajNiz = [
     </p>
   </div>,
 ];
+
 function App() {
+  const [openPopUp, setOpenPopUp] = useState(false);
+  const [popUpSadrzaj, setPopUpSadrzaj] = useState(undefined);
+  const [userName, setUserName] = useState("Prijava");
+  const [naslov, setNaslov] = useState(undefined);
   const [sadrzaj, setSadrzaj] = useState(
     <div className="divSadrzaj">
       <p className="sadrzaj">
@@ -104,11 +111,25 @@ function App() {
 
   return (
     <div>
+      {openPopUp === true ? (
+        <PopUp
+          naslov={naslov}
+          setOpenPopUp={setOpenPopUp}
+          sadrzaj={popUpSadrzaj}
+        />
+      ) : undefined}
+
       <header>
         <GornjiDeo
           slika="Logo.png"
           sadrzaj={sadrzajNiz}
           setSadrzaj={setSadrzaj}
+        />
+        <LogInDugme
+          userName={userName}
+          setOpenPopUp={setOpenPopUp}
+          setSadrzaj={setPopUpSadrzaj}
+          setNaslov={setNaslov}
         />
       </header>
       <br />
