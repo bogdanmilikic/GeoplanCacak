@@ -121,7 +121,7 @@ iframe {
 .dropbtn {
   text-align: center;
   background-color: rgb(18, 27, 58);
-  width: 180px;
+  width: auto;
   color: white;
   padding: 16px;
   font-size: 20px;
@@ -138,8 +138,10 @@ iframe {
 
 /* Dropdown Content (Hidden by Default) */
 .dropdown-content {
-  margin-left: 15px;
-  width: 150px;
+  align-items: right;
+  width: 100%;
+  justify-content: right;
+
   display: none;
   position: absolute;
   background-color: #f9f9f9;
@@ -170,7 +172,9 @@ iframe {
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {
   color: white;
+  border-radius: 15px 15px 0px 0px;
   background-color: rgb(76, 95, 163);
+  transition: 0.3s;
 }
 .logInDugmePozicija {
   position: absolute;
