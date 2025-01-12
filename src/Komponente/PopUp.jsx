@@ -1,7 +1,3 @@
-import { useEffect } from "react";
-import LogIn from "../LogIn";
-import SignUp from "./SignUp";
-
 const PopUp = ({ setOpenPopUp, sadrzaj, naslov }) => {
   const handleClose = () => {
     setOpenPopUp(false);

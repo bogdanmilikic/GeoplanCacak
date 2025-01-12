@@ -1,21 +1,28 @@
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import LogIn from "../LogIn";
-import SignUp from "./SignUp";
 
-const LogInDugme = ({ userName, setOpenPopUp, setSadrzaj, setNaslov }) => {
+const LogInDugme = ({
+  userName,
+  setUserName,
+  setOpenPopUp,
+  setSadrzaj,
+  setNaslov,
+  signUp,
+  logIn,
+}) => {
   const handleLogInDugme = () => {
     setNaslov("Log in");
-    setSadrzaj(<LogIn set />);
+    setSadrzaj(logIn);
     setOpenPopUp(true);
   };
   const handleSignUpDugme = () => {
     setNaslov("Sign up");
-    setSadrzaj(<SignUp />);
+    setSadrzaj(signUp);
     setOpenPopUp(true);
   };
   const handleLogOut = () => {
     setOpenPopUp(false);
+    setUserName("Prijava");
   };
   return (
     <div className="logInDugmePozicija">
@@ -38,7 +45,9 @@ const LogInDugme = ({ userName, setOpenPopUp, setSadrzaj, setNaslov }) => {
             </>
           ) : (
             <center>
-              <button onClick={handleLogOut}>Log out</button>
+              <button onClick={handleLogOut} className="logInOutDugmici">
+                Log out
+              </button>
             </center>
           )}
         </div>

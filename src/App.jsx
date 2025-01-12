@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import GornjiDeo from "./Komponente/GornjiDeo";
 import stilovi from "./Komponente/stilovi.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faStreetView } from "@fortawesome/free-solid-svg-icons/faStreetView";
-import { faPhone } from "@fortawesome/free-solid-svg-icons/faPhone";
+import emailjs from "@emailjs/browser";
+import { faStreetView, faPhone } from "@fortawesome/free-solid-svg-icons";
 import {
   faChevronCircleUp,
   faEnvelope,
@@ -11,6 +11,8 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import LogInDugme from "./Komponente/LogInDugme";
 import PopUp from "./Komponente/PopUp";
+import SignUp from "./Komponente/SignUp";
+import LogIn from "./Komponente/LogIn";
 
 const sadrzajNiz = [
   <div className="divSadrzaj">
@@ -88,11 +90,18 @@ const sadrzajNiz = [
 ];
 
 function App() {
+  const [eMail, setEmaill] = useState("");
   const [openPopUp, setOpenPopUp] = useState(false);
   const [sifra, setSifra] = useState("");
   const [popUpSadrzaj, setPopUpSadrzaj] = useState(undefined);
+  //userName se zove userName jer me mrzi da menjam sve u logInDugmeNaziv :/
+  const [korisnik, setKorisnik] = useState("");
   const [userName, setUserName] = useState("Prijava");
   const [naslov, setNaslov] = useState(undefined);
+  const informacijeKorisnika = {
+    ime: eMail,
+    sifra: "sifra1234",
+  };
   const [sadrzaj, setSadrzaj] = useState(
     <div className="divSadrzaj">
       <p className="sadrzaj">
@@ -109,16 +118,19 @@ function App() {
     const timeout = setTimeout(() => setAnimate(false), 500);
     return () => clearTimeout(timeout);
   }, [sadrzaj]);
-
+  useEffect(() => {
+    console.log("eMail value changed:", eMail); // Logs the value every time it changes
+    console.log("Vrednost objekta se promenio", informacijeKorisnika.ime);
+  }, [eMail, informacijeKorisnika.ime]);
   return (
     <div>
-      {openPopUp === true ? (
+      {openPopUp && (
         <PopUp
           naslov={naslov}
           setOpenPopUp={setOpenPopUp}
           sadrzaj={popUpSadrzaj}
         />
-      ) : undefined}
+      )}
 
       <header>
         <GornjiDeo
@@ -127,7 +139,25 @@ function App() {
           setSadrzaj={setSadrzaj}
         />
         <LogInDugme
+          logIn={
+            <LogIn
+              userName={eMail}
+              password={sifra}
+              setUserName={setUserName}
+              setOpenPopUp={setOpenPopUp}
+            />
+          }
+          signUp={
+            <SignUp
+              eMail={eMail} // Pass eMail state from App
+              setEmaill={setEmaill}
+              setSifra={setSifra}
+            />
+          }
+          open={openPopUp}
+          naslov={naslov}
           userName={userName}
+          setUserName={setUserName}
           setOpenPopUp={setOpenPopUp}
           setSadrzaj={setPopUpSadrzaj}
           setNaslov={setNaslov}
