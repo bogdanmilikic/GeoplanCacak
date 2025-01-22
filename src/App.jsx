@@ -17,9 +17,12 @@ import PopUp from "./Komponente/PopUp";
 import SignUp from "./Komponente/SignUp";
 import LogIn from "./Komponente/LogIn";
 import ComboBox from "./Komponente/ComboBox";
+import Termin from "./Komponente/Termin";
+import lista from "./Komponente/lista";
 
 function App() {
   const [eMail, setEmaill] = useState("");
+  const [localLista, setLocalLista] = useState(lista);
   const [openPopUp, setOpenPopUp] = useState(false);
   const [sifra, setSifra] = useState("");
   const [popUpSadrzaj, setPopUpSadrzaj] = useState(undefined);
@@ -29,19 +32,17 @@ function App() {
   const [comboBoxVrednost, setComboBoxVrednost] = useState("");
   const [naslov, setNaslov] = useState(undefined);
   const [brojTelefona, setBrojTelefona] = useState("");
-  const [minuti, setMinuti] = useState("M");
-  const [sati, setSati] = useState("H");
+  const [minuti, setMinuti] = useState(0);
+  const [sati, setSati] = useState(0);
   const [datum, setDatum] = useState("");
-  function isString(a) {
-    if (typeof a === "string") {
-      return true;
-    } else {
-      return false;
-    }
-  }
-
   const handleMinuti = (e) => {
-    setMinuti(e.target.value);
+    const value = e.target.value;
+    if (value === "" || isNaN(value)) {
+      setMinuti(0); // Default to 0 for invalid input
+    } else {
+      const numericValue = Math.max(0, Math.min(60, Number(value))); // Clamp value between 0 and 59
+      setMinuti(numericValue);
+    }
   };
   const handleSati = (e) => {
     setSati(e.target.value);
@@ -52,28 +53,77 @@ function App() {
   const handleDatum = (e) => {
     setDatum(e.target.value);
   };
+  const handleOtkazi = (id) => {
+    const updatedTermini = localLista.filter((termin) => termin.id !== id);
+    setLocalLista(updatedTermini);
+  };
+  const zauzetTermin = (datum, sati, minuti) => {
+    return localLista.some(
+      (item) =>
+        item.datum === datum && item.sati === sati && item.minuti === minuti
+    );
+  };
+  const terminUProslosti = (datum, sati, minuti) => {
+    const trenutniDatum = new Date();
+    const uneseniDatum = new Date(datum);
+    uneseniDatum.setHours(sati);
+    uneseniDatum.setMinutes(minuti);
+    return uneseniDatum < trenutniDatum;
+  };
   const handleZakazi = () => {
+    const dodatakListi = {
+      id: localLista.length + 1,
+      userName: userName,
+      usluga: comboBoxVrednost,
+      datum: datum,
+      sati: sati,
+      minuti: minuti,
+    };
+    if (userName === "Prijava") {
+      alert("Morate biti prijavljeni da bi ste zakazali termin");
+      return;
+    }
     if (sati < 8) {
       alert("Radno vreme počinje od 8 sati");
-      setSati(null);
-      return 0;
-    } else if (sati > 19 || isString(sati) === true) {
+      setSati("");
+      return;
+    } else if (sati > 19) {
       alert("Molim vas izaberite termin pre 19h");
-      setSati(null);
-      return 0;
-    } else if (minuti < 0 || isString(minuti) === true) {
-      setMinuti(null);
+      setSati("");
+      return;
+    }
+    if (comboBoxVrednost === "") {
+      alert("Morate uneti uslugu");
+      return;
+    }
+    if (brojTelefona === "") {
+      alert("Morate uneti vaš broj telefona");
+      return;
+    }
+    if (datum === "") {
+      alert("Morate uneti datum termina");
+      return;
+    }
+    if (terminUProslosti(datum, sati, minuti) === true) {
+      alert("Ne možete zakatati termin u prošlosti");
+      return;
+    }
+    if (minuti < 0 || isNaN(minuti)) {
       alert("Molim vas unesite vrednost minuta veću ili jednaku nuli");
-      return 0;
+      setMinuti("");
+      return;
     } else if (minuti > 59) {
       alert("Molim vas unesite vrednost minuta manju od 60");
-      return 0;
-    } else if (comboBoxVrednost === "") {
-      alert("Molim vas izaberite vrstu usluge");
-      return 0;
+      setMinuti("");
+      return;
     }
+    if (zauzetTermin(datum, sati, minuti) === true) {
+      alert("Termin je zauzet :(");
+      return;
+    }
+    alert(`Termin zakazan u ${sati}:${minuti < 10 ? "0" : ""}${minuti}`);
+    setLocalLista((staro) => [...staro, dodatakListi]);
   };
-
   const informacijeKorisnika = {
     ime: eMail,
     sifra: "sifra1234",
@@ -222,8 +272,6 @@ function App() {
         <font style={{ fontSize: "30px" }}>:</font>
         <input
           className="zakazivanjeDatum"
-          min={0}
-          max={60}
           value={minuti}
           onChange={handleMinuti}
           style={{ width: "50px" }}
@@ -260,6 +308,9 @@ function App() {
     }
     if (minuti > 59) {
       setSati((staraVrednost) => staraVrednost + 1);
+      setMinuti(0);
+    }
+    if (minuti < 0) {
       setMinuti(0);
     }
     console.log(sati, ":", minuti);
@@ -311,8 +362,29 @@ function App() {
       <br />
       <main>
         <div className={`divCentriranje ${animate ? "animate" : ""}`}>
-          {userName === "Prijava" && aktivnoDugme === 4 ? forma : sadrzaj}
+          {aktivnoDugme === 4 ? forma : sadrzaj}
         </div>
+        {aktivnoDugme === 4 ? (
+          <div className={`divCentriranje ${animate ? "animate" : ""}`}>
+            <div className="parentContainer">
+              <div className="terminList">
+                {localLista.map((item) => (
+                  <Termin
+                    id={item.id}
+                    key={item.id}
+                    usluga={item.usluga}
+                    datum={item.datum}
+                    userName={item.userName}
+                    sati={item.sati}
+                    minuti={item.minuti}
+                    ime={userName}
+                    handleOtkazi={handleOtkazi}
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
+        ) : undefined}
       </main>
     </div>
   );
