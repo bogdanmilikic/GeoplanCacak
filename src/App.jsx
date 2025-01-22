@@ -366,6 +366,13 @@ function App() {
         </div>
         {aktivnoDugme === 4 ? (
           <div className={`divCentriranje ${animate ? "animate" : ""}`}>
+            <p className="sadrzajNaslov" style={{ color: "white" }}>
+              Zakazani termini
+            </p>
+          </div>
+        ) : undefined}
+        {aktivnoDugme === 4 ? (
+          <div className={`divCentriranje ${animate ? "animate" : ""}`}>
             <div className="parentContainer">
               <div className="terminList">
                 {localLista.map((item) => (
