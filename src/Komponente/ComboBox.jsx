@@ -13,12 +13,12 @@ const ComboBox = ({ vrednost, setVrednost }) => {
       <option value="" disabled>
         Izaberite uslugu
       </option>
-      <option value="snimanje">Snimanje i izrada</option>
-      <option value="obelezavanje">Obeležavanje</option>
-      <option value="izrada">Izrada</option>
-      <option value="deoba">Fizička deoba</option>
-      <option value="sud">Sudska veštačenja</option>
-      <option value="omedjavanje">Omedjavanje</option>
+      <option value="Snimanje">Snimanje i izrada</option>
+      <option value="Obelezavanje">Obeležavanje</option>
+      <option value="Izrada">Izrada</option>
+      <option value="Deoba">Fizička deoba</option>
+      <option value="Sud">Sudska veštačenja</option>
+      <option value="Omedjavanje">Omedjavanje</option>
     </select>
   );
 };
