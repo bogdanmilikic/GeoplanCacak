@@ -402,20 +402,49 @@ iframe {
   }
 
   .popUpSadrzaj {
-    width: 90%; /* Make popup smaller on small screens */
-    right: 5%; /* Center it horizontally */
-    top: 20%;
-    padding: 20px;
+    width: 90%; /* Make popup take most of the screen width */
+    right: 5%; /* Center horizontally */
+    top: 15%; /* Lower on the screen */
+    padding: 15px; /* Adjust padding for smaller screens */
+    border-radius: 20px; /* Slightly smaller border radius */
+  }
+
+  .popUpNaslov {
+    font-size: 28px; /* Reduce title size */
+  }
+
+  .popUpInput {
+    font-size: 16px; /* Slightly smaller text size */
+    width: 100%; /* Full width for inputs */
+    height: 40px; /* Maintain a comfortable height */
+    margin: 0px;
+  }
+
+  .popUpLabel {
+    font-size: 18px; /* Adjust label size */
+    margin-bottom: 5px; /* Add spacing for better readability */
+  }
+
+  .popUpDugme {
+    font-size: 18px; /* Slightly smaller button text */
+    width: 100%; /* Full width for buttons */
+    padding: 10px; /* Add padding for easier tap targets */
+    margin-top: 20px; /* Space between button and inputs */
+  }
+
+  .popUpX {
+    font-size: 24px; /* Reduce close button size */
+    margin-top: 35px;
   }
 
   .zakazivanjeDiv {
-    width: 100%; /* Adjust container width */
+    width: 100%;
     padding: 10px;
   }
 
   .zakazivanjeDatum,
   .comboBoxKutija {
-    width: 100%; /* Make inputs full-width */
-    margin: 10px 0; /* Add spacing */
+    width: 100%;
+    margin: 10px 0;
   }
 }
