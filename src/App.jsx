@@ -40,7 +40,7 @@ function App() {
     if (value === "" || isNaN(value)) {
       setMinuti(0); // Default to 0 for invalid input
     } else {
-      const numericValue = Math.max(0, Math.min(60, Number(value))); // Clamp value between 0 and 59
+      const numericValue = Math.max(0, Math.min(59, Number(value))); // Clamp value between 0 and 59
       setMinuti(numericValue);
     }
   };
@@ -70,6 +70,31 @@ function App() {
     uneseniDatum.setMinutes(minuti);
     return uneseniDatum < trenutniDatum;
   };
+  const sortirajListu = (listaZaSortiranje) => {
+    return listaZaSortiranje.sort((a, b) => {
+      // Kreiraj pun datum i vreme za oba elementa
+      const datumA = new Date(
+        `${a.datum}T${String(a.sati).padStart(2, "0")}:${String(
+          a.minuti
+        ).padStart(2, "0")}`
+      );
+      const datumB = new Date(
+        `${b.datum}T${String(b.sati).padStart(2, "0")}:${String(
+          b.minuti
+        ).padStart(2, "0")}`
+      );
+
+      // Uporedi datume
+      return datumA - datumB;
+    });
+  };
+
+  // useEffect za inicijalno sortiranje liste
+  useEffect(() => {
+    const sortiranaLista = sortirajListu(lista); // Sortiraj listu pre postavljanja
+    setLocalLista(sortiranaLista);
+  }, []);
+
   const handleZakazi = () => {
     const dodatakListi = {
       id: localLista.length + 1,
@@ -79,10 +104,12 @@ function App() {
       sati: sati,
       minuti: minuti,
     };
+
     if (userName === "Prijava") {
       alert("Morate biti prijavljeni da bi ste zakazali termin");
       return;
     }
+
     if (sati < 8) {
       alert("Radno vreme počinje od 8 sati");
       setSati("");
@@ -92,37 +119,35 @@ function App() {
       setSati("");
       return;
     }
+
     if (comboBoxVrednost === "") {
       alert("Morate uneti uslugu");
       return;
     }
+
     if (brojTelefona === "") {
       alert("Morate uneti vaš broj telefona");
       return;
     }
+
     if (datum === "") {
       alert("Morate uneti datum termina");
       return;
     }
-    if (terminUProslosti(datum, sati, minuti) === true) {
+
+    if (terminUProslosti(datum, sati, minuti)) {
       alert("Ne možete zakatati termin u prošlosti");
       return;
     }
-    if (minuti < 0 || isNaN(minuti)) {
-      alert("Molim vas unesite vrednost minuta veću ili jednaku nuli");
-      setMinuti("");
-      return;
-    } else if (minuti > 59) {
-      alert("Molim vas unesite vrednost minuta manju od 60");
-      setMinuti("");
-      return;
-    }
-    if (zauzetTermin(datum, sati, minuti) === true) {
+
+    if (zauzetTermin(datum, sati, minuti)) {
       alert("Termin je zauzet :(");
       return;
     }
+
     alert(`Termin zakazan u ${sati}:${minuti < 10 ? "0" : ""}${minuti}`);
-    setLocalLista((staro) => [...staro, dodatakListi]);
+    const novaLista = sortirajListu([...localLista, dodatakListi]);
+    setLocalLista(novaLista);
   };
   const informacijeKorisnika = {
     ime: eMail,
@@ -306,10 +331,7 @@ function App() {
     if (sati < 8) {
       setSati(8);
     }
-    if (minuti > 59) {
-      setSati((staraVrednost) => staraVrednost + 1);
-      setMinuti(0);
-    }
+
     if (minuti < 0) {
       setMinuti(0);
     }
