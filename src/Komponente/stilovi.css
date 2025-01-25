@@ -417,7 +417,7 @@ iframe {
     font-size: 16px; /* Slightly smaller text size */
     width: 100%; /* Full width for inputs */
     height: 40px; /* Maintain a comfortable height */
-    margin: 0px;
+    margin: 0px !important;
   }
 
   .popUpLabel {
