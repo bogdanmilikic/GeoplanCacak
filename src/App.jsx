@@ -45,7 +45,13 @@ function App() {
     }
   };
   const handleSati = (e) => {
-    setSati(e.target.value);
+    const value = e.target.value;
+    if (value === "" || isNaN(value)) {
+      setSati(0); // Default to 0 for invalid input
+    } else {
+      const numericValue = Math.max(1, Math.min(18, Number(value))); // Clamp value between 0 and 59
+      setSati(numericValue);
+    }
   };
   const handleBroj = (e) => {
     setBrojTelefona(e.target.value);
@@ -325,13 +331,6 @@ function App() {
     console.log("Vrednost objekta se promenio", informacijeKorisnika.ime);
   }, [eMail, informacijeKorisnika.ime]);
   useEffect(() => {
-    if (sati > 18) {
-      setSati(18);
-    }
-    if (sati < 8) {
-      setSati(8);
-    }
-
     if (minuti < 0) {
       setMinuti(0);
     }
