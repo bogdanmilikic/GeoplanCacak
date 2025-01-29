@@ -162,7 +162,7 @@ function App() {
   //sadrzajNiz prebaciti u GornjiDeo.jsx da bi radila forma
 
   const sadrzajNiz = [
-    <div className="divSadrzaj" style={{ width: "80%" }}>
+    <div className="divSadrzaj">
       <p className="sadrzajNaslov">O nama</p>
       <hr />
       <p className="sadrzaj">
