@@ -359,7 +359,7 @@ function App() {
 
       <header>
         <GornjiDeo
-          slika="Logo.png"
+          slika="GeoPlanLogo.png"
           aktivno={aktivnoDugme}
           setAktivno={setAktivnoDugme}
           sadrzaj={sadrzajNiz}
@@ -397,7 +397,16 @@ function App() {
         </div>
         {aktivnoDugme === 4 ? (
           <div className={`divCentriranje ${animate ? "animate" : ""}`}>
-            <p className="sadrzajNaslov" style={{ color: "white" }}>
+            <p
+              className="sadrzajNaslov"
+              style={{
+                color: "white",
+                backgroundColor: "rgb(46, 60, 70, 0.5)",
+                textAlign: "center",
+                borderRadius: "10px",
+                padding: "15px",
+              }}
+            >
               Zakazani termini
             </p>
           </div>

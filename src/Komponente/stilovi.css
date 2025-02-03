@@ -7,24 +7,26 @@
 
 html,
 body {
-  background-color: rgb(76, 95, 163);
+  background-image: url("geoplan_mapa.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   scroll-behavior: smooth;
+
   height: 100%;
   width: 100%;
 }
 
 .logo {
-  width: 320px;
-  height: 260px;
+  width: 620px;
+  height: 220px;
   border-radius: 0;
-  margin-bottom: -5px;
 }
 
 .gornjiDeoDiv {
   margin: 0;
   padding: 0;
-  background-color: rgb(169, 222, 254);
-  height: 260px;
+  background-color: rgb(46, 60, 70, 0.5);
 }
 
 .gornjiDeoMenu {
@@ -32,24 +34,28 @@ body {
 }
 
 .gornjiDeoDugmici {
-  margin-top: 0;
+  padding: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
   margin-right: 15px;
   margin-left: 15px;
   border: 0px;
   font-size: 31px;
+  height: 100%;
   width: 210px;
   padding: 2px;
-  background-color: transparent;
+  border-radius: 10px 10px 0px 0px;
+  background-color: rgb(255, 255, 255, 0.5);
   color: rgb(18, 27, 58);
   text-align: center;
   transition: all 0.2s ease-in-out;
 }
 .gornjiDeoDugmici:hover {
+  height: 100%;
   color: white;
   background-color: rgb(76, 95, 163);
-  border-radius: 16px 16px 0px 0px;
   width: 300px;
-  font-size: 38px;
+
   text-align: center;
 }
 .gornjiDeoDugmiciAktivno {
@@ -57,7 +63,8 @@ body {
   background-color: rgb(76, 95, 163);
   border-radius: 16px 16px 0px 0px;
   width: 300px;
-  font-size: 45px;
+
+  font-size: 35px;
   border: 0px;
   padding: 2px;
   text-align: center;
@@ -86,7 +93,7 @@ body {
 
 .divSadrzaj {
   justify-content: center;
-
+  box-shadow: 2px 2px 4px #000000;
   align-items: center;
   width: auto;
   padding-left: 30px;
@@ -199,7 +206,7 @@ iframe {
   position: fixed;
   top: 30%;
   right: 37%;
-  background-color: rgb(169, 222, 254);
+  background-color: rgb(69, 95, 114);
   z-index: 100;
   border-radius: 30px;
   opacity: 100%;
@@ -358,7 +365,7 @@ iframe {
   }
 
   .logo {
-    width: 200px; /* Resize logo */
+    width: 350px; /* Resize logo */
     height: auto; /* Maintain aspect ratio */
     margin: 0 auto; /* Center it */
   }
