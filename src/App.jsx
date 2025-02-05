@@ -401,7 +401,7 @@ function App() {
               className="sadrzajNaslov"
               style={{
                 color: "white",
-                backgroundColor: "rgb(46, 60, 70, 0.5)",
+                backgroundColor: "rgb(46, 60, 70, 0.7)",
                 textAlign: "center",
                 borderRadius: "10px",
                 padding: "15px",
