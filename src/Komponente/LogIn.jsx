@@ -13,7 +13,7 @@ const LogIn = ({ userName, setUserName, password, setOpenPopUp }) => {
     setSifra(e.target.value);
   };
   const handleClickPotvrdi = () => {
-    if (password === sifra && userName === korisnik) {
+    if (password === sifra && userName === korisnik&&sifra!=="") {
       alert("Uspesno prijavljivanje ");
       setUserName(korisnik);
       setOpenPopUp(false);
