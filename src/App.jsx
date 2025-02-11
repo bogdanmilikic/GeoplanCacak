@@ -272,10 +272,10 @@ function App() {
 
   const [sadrzaj, setSadrzaj] = useState(
     <div className="divSadrzaj">
-      <p className="sadrzaj">
-        <FontAwesomeIcon icon={faChevronCircleUp} />
-        {"    "}Izaberite jednu od opcija{"    "}
-        <FontAwesomeIcon icon={faChevronCircleUp} />
+      <p className="sadrzaj" style={{textAlign:"center"}}>
+        <FontAwesomeIcon icon={faChevronCircleUp}  style={{marginRight:"5px"}}/>
+        {"     "}Izaberite jednu od opcija{"     "}
+        <FontAwesomeIcon icon={faChevronCircleUp}  style={{marginLeft:"5px"}} />
       </p>
     </div>
   );
