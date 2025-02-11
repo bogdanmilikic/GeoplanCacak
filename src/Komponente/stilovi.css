@@ -45,7 +45,7 @@ body {
   width: 210px;
   padding: 2px;
   border-radius: 10px 10px 0px 0px;
-  background-color: rgb(255, 255, 255, 0.5);
+  background-color: rgb(255, 255, 255, 0.6);
   color: rgb(18, 27, 58);
   text-align: center;
   transition: all 0.2s ease-in-out;
@@ -102,7 +102,9 @@ body {
   border-radius: 30px;
   height: auto;
 }
-
+li {
+  margin-top: 5px;
+}
 .sadrzaj {
   font-size: 28px;
   text-align: justify;
@@ -326,16 +328,43 @@ iframe {
   .terminList {
     grid-template-columns: repeat(3, 1fr); /* 3 items per row */
   }
+  .gornjiDeoDugmici {
+    border-radius: 10px;
+  }
+  ul {
+    margin-left: 0px;
+  }
+  .gornjiDeoDugmiciAktivno {
+    border-radius: 10px;
+  }
 }
 
 @media (max-width: 768px) {
   .terminList {
     grid-template-columns: repeat(2, 1fr); /* 2 items per row */
   }
+  .gornjiDeoDugmici {
+    border-radius: 10px;
+  }
+  .gornjiDeoDugmiciAktivno {
+    border-radius: 10px;
+  }
+  ul {
+    margin-left: 0px;
+  }
 }
 @media (max-width: 480px) {
   .terminList {
     grid-template-columns: 1fr; /* 1 item per row */
+  }
+  .gornjiDeoDugmici {
+    border-radius: 10px;
+  }
+  .gornjiDeoDugmiciAktivno {
+    border-radius: 10px;
+  }
+  ul {
+    margin-left: 0px;
   }
 }
 .parentContainer {
@@ -358,12 +387,29 @@ iframe {
   color: red;
   background-color: white;
 }
+.gornjiDeoDugmici {
+  border-radius: 10px;
+}
+.gornjiDeoDugmiciAktivno {
+  border-radius: 10px;
+}
+ul {
+  margin-left: 0px;
+}
 @media (max-width: 768px) {
   /* Adjusting overall layout */
   body {
     padding: 0 10px;
   }
-
+  .gornjiDeoDugmici {
+    border-radius: 10px;
+  }
+  .gornjiDeoDugmiciAktivno {
+    border-radius: 10px;
+  }
+  ul {
+    margin-left: 0px;
+  }
   .logo {
     width: 350px; /* Resize logo */
     height: auto; /* Maintain aspect ratio */
