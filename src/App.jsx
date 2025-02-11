@@ -19,9 +19,11 @@ import LogIn from "./Komponente/LogIn";
 import ComboBox from "./Komponente/ComboBox";
 import Termin from "./Komponente/Termin";
 import lista from "./Komponente/lista";
+import ReactCountryFlag from "react-country-flag";
 
 function App() {
   const [eMail, setEmaill] = useState("");
+  const [engleski, setEngleski] = useState(false);
   const [localLista, setLocalLista] = useState(lista);
   const [openPopUp, setOpenPopUp] = useState(false);
   const [sifra, setSifra] = useState("");
@@ -173,10 +175,10 @@ function App() {
         preciznosti i profesionalizmu u svakom projektu.
         <br />
         Koristimo najmoderniju opremu i tehnologiju kako bismo obezbedili
-        pouzdane rezultate i ispunili specifične zahteve naših klijenata. Bez
-        obzira na veličinu projekta, pristupamo svakom zadatku s istom pažnjom i
-        posvećenošću.Kroz godine rada stekli smo poverenje mnogih klijenata
-        zahvaljujući stručnosti, tačnosti i brzim rokovima.
+        pouzdane rezultate i ispunili specifične zahteve naših klijenata.
+        <br /> Bez obzira na veličinu projekta, pristupamo svakom zadatku s
+        istom pažnjom i posvećenošću.Kroz godine rada stekli smo poverenje
+        mnogih klijenata zahvaljujući stručnosti, tačnosti i brzim rokovima.
         <br />
         Naša misija je da budemo vaš pouzdan partner u svim geodetskim
         poslovima, osiguravajući kvalitetne rezultate koji podržavaju vaše
@@ -189,7 +191,8 @@ function App() {
       <p className="sadrzajNaslov">Kontakt</p>
       <hr />
       <p className="sadrzaj">
-        <FontAwesomeIcon icon={faEnvelope} /> Email - geo.plan@eune.rs
+        <FontAwesomeIcon icon={faEnvelope} /> Email - geoplancacak@mts.rs /
+        milan.geoplan@gmail.com
         <br />
         <FontAwesomeIcon icon={faPhone} style={{ marginTop: "10px" }} /> Tel/Fax
         - 032/341 368 /// 064/133 71 58
@@ -216,33 +219,44 @@ function App() {
       <p className="sadrzajNaslov">Usluge</p>
       <hr />
       <p className="sadrzaj">
-        Naše usluge obuhvataju:
-        <ul style={{ marginTop: "5px" }}>
-          <li>
-            Snimanje i izrada podloga za projektovanje – Precizne geodetske
-            podloge prilagođene vašim potrebama.{" "}
-          </li>
-          <li style={{ marginTop: "5px" }}>
-            Obeležavanje projektovanog stanja – Profesionalno obeležavanje na
-            terenu prema projektnoj dokumentaciji.
-          </li>
-          <li style={{ marginTop: "5px" }}>
-            {" "}
-            Izrada geodetskih projekata i elaborata – Kompletna dokumentacija za
-            urbanističke, građevinske i infrastrukturne projekte.
-          </li>{" "}
-          <li style={{ marginTop: "5px" }}>
-            {" "}
-            Omeđavanje – Utvrđivanje i označavanje granica parcela.
-          </li>{" "}
-          <li style={{ marginTop: "5px" }}>
-            Fizička deoba – Razdvajanje parcela u skladu sa važećim propisima.{" "}
-          </li>
-          <li style={{ marginTop: "5px" }}>
-            Sudska veštačenja – Stručna mišljenja i analize za potrebe sudskih
-            procesa.
-          </li>
+        Dobrodošli u naš biro, gde spoj geodezije i arhitekture donosi precizna
+        i kreativna rešenja za vaš prostor.
+        <br /> Naš biro pruža sveobuhvatne geodetske usluge koje garantuju
+        preciznost i pouzdanost u svakom projektu.
+      </p>
+      <p className="sadrzaj" style={{ marginTop: "-70px" }}>
+        Nudimo:
+        <ul style={{ marginLeft: "50px" }}>
+          {" "}
+          <li> Projekte geodetskog obeležavanja</li>
+          <li>Parcelaciju i fizičke deobe</li>
+          <li> Snimanje objekata i izvedenog stanja </li>
+          <li> Sudska veštačenja</li>
+          <li>Omeđavanja</li>
+          <li> Izradu geodetskih podloga za projektovanje </li>
+          <li> Prenošenje projektovanog stanja na teren</li>
         </ul>
+      </p>
+      <p className="sadrzaj" style={{ marginTop: "-70px" }}>
+        Pored geodetskih usluga, pružamo i širok spektar arhitektonskih usluga:
+        <ul style={{ marginLeft: "50px", marginBottom: "10px" }}>
+          <li> Idejna rešenja za sve tipove objekata</li>{" "}
+          <li>
+            {" "}
+            Izrada tehničke dokumentacije za objekte i parterno uređenje{" "}
+          </li>
+          <li>
+            {" "}
+            Izrada izveštaja o zatečenom stanju objekta za potrebe ozakonjenja
+            objekta
+          </li>{" "}
+          <li> Projektovanje enterijera prilagođeno vašim potrebama</li>
+        </ul>{" "}
+        Naš tim kombinuje tehničku preciznost i kreativnost kako bi svaki
+        projekat bio funkcionalan, estetski usklađen i u skladu sa svim
+        propisima. Bilo da vam je potrebna pravna sigurnost vaše nepokretnosti,
+        izrada projekata ili terenski radovi visoke tačnosti, naš tim stoji vam
+        na raspolaganju.
       </p>
     </div>,
     <div className="divSadrzaj">
@@ -433,6 +447,7 @@ function App() {
           </div>
         ) : undefined}
       </main>
+      <ReactCountryFlag countryCode="RS" />
     </div>
   );
 }

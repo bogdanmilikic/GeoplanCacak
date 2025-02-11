@@ -29,7 +29,17 @@ const GornjiDeo = ({ slika, setSadrzaj, sadrzaj, aktivno, setAktivno }) => {
       <menu>
         <center>
           {" "}
-          <img src={slika} className="logo" alt="Nema slike" />
+          <img
+            src={slika}
+            className="logo"
+            alt="Nema slike"
+            style={{
+              backgroundColor: "rgb(255,255,255,0.6)",
+              borderRadius: "30px",
+              marginBottom: "10px",
+              marginTop: "10px",
+            }}
+          />
         </center>
 
         <Dugmici aktivno={aktivno} brojDugmeta={1} handleUradi={handleInfo}>
