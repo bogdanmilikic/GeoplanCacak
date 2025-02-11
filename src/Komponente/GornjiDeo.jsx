@@ -7,7 +7,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 import { faCheckToSlot } from "@fortawesome/free-solid-svg-icons/faCheckToSlot";
-const GornjiDeo = ({ slika, setSadrzaj, sadrzaj, aktivno, setAktivno,prijava}) => {
+const GornjiDeo = ({ slika, setSadrzaj, sadrzaj, aktivno, setAktivno }) => {
   const handleInfo = () => {
     setAktivno(1);
     setSadrzaj(sadrzaj[0]);
@@ -60,7 +60,6 @@ const GornjiDeo = ({ slika, setSadrzaj, sadrzaj, aktivno, setAktivno,prijava}) =
           {" "}
           <FontAwesomeIcon icon={faCalendarCheck} /> Zakazivanje
         </Dugmici>
-        {prijava}
       </menu>
     </div>
   );
