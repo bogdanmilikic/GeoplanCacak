@@ -19,7 +19,7 @@ import LogIn from "./Komponente/LogIn";
 import ComboBox from "./Komponente/ComboBox";
 import Termin from "./Komponente/Termin";
 import lista from "./Komponente/lista";
-import ReactCountryFlag from "react-country-flag";
+
 
 function App() {
   const [eMail, setEmaill] = useState("");
@@ -224,7 +224,7 @@ function App() {
         <br /> Naš biro pruža sveobuhvatne geodetske usluge koje garantuju
         preciznost i pouzdanost u svakom projektu.
       </p>
-      <p className="sadrzaj" style={{ marginTop: "-70px" }}>
+      <p className="sadrzaj" style={{ marginTop: "-30px" }}>
         Nudimo:
         <ul style={{ marginLeft: "50px" }}>
           {" "}
@@ -237,7 +237,7 @@ function App() {
           <li> Prenošenje projektovanog stanja na teren</li>
         </ul>
       </p>
-      <p className="sadrzaj" style={{ marginTop: "-70px" }}>
+      <p className="sadrzaj" style={{ marginTop: "-30px" }}>
         Pored geodetskih usluga, pružamo i širok spektar arhitektonskih usluga:
         <ul style={{ marginLeft: "50px", marginBottom: "10px" }}>
           <li> Idejna rešenja za sve tipove objekata</li>{" "}
@@ -254,7 +254,7 @@ function App() {
         </ul>{" "}
         Naš tim kombinuje tehničku preciznost i kreativnost kako bi svaki
         projekat bio funkcionalan, estetski usklađen i u skladu sa svim
-        propisima. Bilo da vam je potrebna pravna sigurnost vaše nepokretnosti,
+        propisima. <br/>Bilo da vam je potrebna pravna sigurnost vaše nepokretnosti,
         izrada projekata ili terenski radovi visoke tačnosti, naš tim stoji vam
         na raspolaganju.
       </p>
@@ -447,7 +447,7 @@ function App() {
           </div>
         ) : undefined}
       </main>
-      <ReactCountryFlag countryCode="RS" />
+ 
     </div>
   );
 }
