@@ -21,6 +21,7 @@ import Termin from "./Komponente/Termin";
 import lista from "./Komponente/lista";
 
 
+
 function App() {
   const [eMail, setEmaill] = useState("");
   const [engleski, setEngleski] = useState(false);
@@ -40,18 +41,18 @@ function App() {
   const handleMinuti = (e) => {
     const value = e.target.value;
     if (value === "" || isNaN(value)) {
-      setMinuti(0); // Default to 0 for invalid input
+      setMinuti(0); 
     } else {
-      const numericValue = Math.max(0, Math.min(59, Number(value))); // Clamp value between 0 and 59
+      const numericValue = Math.max(0, Math.min(59, Number(value))); 
       setMinuti(numericValue);
     }
   };
   const handleSati = (e) => {
     const value = e.target.value;
     if (value === "" || isNaN(value)) {
-      setSati(0); // Default to 0 for invalid input
+      setSati(0);
     } else {
-      const numericValue = Math.max(1, Math.min(18, Number(value))); // Clamp value between 0 and 59
+      const numericValue = Math.max(1, Math.min(18, Number(value))); 
       setSati(numericValue);
     }
   };
@@ -80,7 +81,7 @@ function App() {
   };
   const sortirajListu = (listaZaSortiranje) => {
     return listaZaSortiranje.sort((a, b) => {
-      // Kreiraj pun datum i vreme za oba elementa
+   
       const datumA = new Date(
         `${a.datum}T${String(a.sati).padStart(2, "0")}:${String(
           a.minuti
@@ -92,14 +93,14 @@ function App() {
         ).padStart(2, "0")}`
       );
 
-      // Uporedi datume
+     
       return datumA - datumB;
     });
   };
 
-  // useEffect za inicijalno sortiranje liste
+ 
   useEffect(() => {
-    const sortiranaLista = sortirajListu(lista); // Sortiraj listu pre postavljanja
+    const sortiranaLista = sortirajListu(lista);
     setLocalLista(sortiranaLista);
   }, []);
 
@@ -161,7 +162,7 @@ function App() {
     ime: eMail,
     sifra: "sifra1234",
   };
-  //sadrzajNiz prebaciti u GornjiDeo.jsx da bi radila forma
+ 
 
   const sadrzajNiz = [
     <div className="divSadrzaj">
@@ -379,6 +380,9 @@ function App() {
           sadrzaj={sadrzajNiz}
           setSadrzaj={setSadrzaj}
         />
+        <div>
+       
+        </div>
         <LogInDugme
           logIn={
             <LogIn
@@ -402,7 +406,7 @@ function App() {
           setOpenPopUp={setOpenPopUp}
           setSadrzaj={setPopUpSadrzaj}
           setNaslov={setNaslov}
-        />
+        /> 
       </header>
       <br />
       <main>
