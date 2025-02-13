@@ -331,15 +331,17 @@ iframe {
   .terminList {
     grid-template-columns: repeat(3, 1fr); /* 3 items per row */
   }
-  
+
   .gornjiDeoDugmici {
-    border-radius: 10px;
+    border-radius: 10px 10px 0px 0px;
+    width: auto;
   }
+
   ul {
     margin-left: 0px;
   }
   .gornjiDeoDugmiciAktivno {
-    border-radius: 10px;
+    border-radius: 10px 10px 0px 0px;
   }
 }
 
@@ -360,6 +362,9 @@ iframe {
 @media (max-width: 480px) {
   .terminList {
     grid-template-columns: 1fr; /* 1 item per row */
+  }
+  .gornjiDeoDugmici:hover {
+    text-align: left;
   }
   .gornjiDeoDugmici {
     border-radius: 10px;
@@ -391,7 +396,6 @@ iframe {
   color: red;
   background-color: white;
 }
-
 
 ul {
   margin-left: 0px;
@@ -430,6 +434,11 @@ ul {
     font-size: 20px; /* Adjust text size */
     width: 100%; /* Make buttons full-width */
     margin: 5px 0; /* Add vertical spacing */
+    text-align: left;
+    padding-left: 20px;
+  }
+  .gornjiDeoDugmici:hover {
+    text-align: left;
   }
 
   .divCentriranje {
@@ -501,5 +510,37 @@ ul {
   .comboBoxKutija {
     width: 100%;
     margin: 10px 0;
+  }
+}
+@media (max-width: 810px) {
+  .gornjiDeoDugmici {
+    width: 90%;
+    margin-bottom: 10px;
+    text-align: left;
+    border-radius: 10px;
+    padding-left: 15px;
+  }
+  .gornjiDeoDugmici:hover {
+    text-align: left;
+    width: 90%;
+  }
+  .gornjiDeoDugmiciAktivno {
+    border-radius: 10px;
+    margin-bottom: 10px;
+    width: 90%;
+    text-align: left;
+    padding-left: 15px;
+    margin-left: 45px;
+  }
+  iframe {
+    max-width: 90%;
+  }
+}
+@media (max-width: 450px) {
+  .gornjiDeoDugmiciAktivno {
+    margin-left: 10px;
+  }
+  .gornjiDeoDugmici:hover {
+    text-align: left;
   }
 }
