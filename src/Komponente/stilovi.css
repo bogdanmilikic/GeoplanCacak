@@ -599,7 +599,11 @@ ul {
     font-size: 15px;
     width: 85px;
   }
-
+  .logInDugmePozicija {
+    position: absolute;
+    top: 32px;
+    right: 10px;
+  }
   .gornjiDeoDugmiciAktivno {
     margin-left: 10px;
   }
@@ -625,7 +629,7 @@ ul {
   .logInDugmePozicija {
     position: absolute;
     top: 27px;
-    right: 20px;
+    right: 15 px;
   }
   .gornjiDeoDugmiciAktivno {
     margin-left: 10px;

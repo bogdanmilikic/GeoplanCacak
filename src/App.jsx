@@ -333,8 +333,8 @@ function App() {
 
   return (
     <>
-      <div className="bg"></div>
-      <div>
+      <div className="bg" />
+      <div style={{ position: "relative" }}>
         {openPopUp && (
           <PopUp
             naslov={naslov}
@@ -352,46 +352,48 @@ function App() {
             setUradiAnimaciju={setUradiAnimaciju}
           />
           <div className="logInDugmePozicija">
-            <div className="switchPolje">
-              <p style={{ marginBottom: "5px" }}>
-                {" "}
-                <Prevodilac
-                  engleski={"Language:"}
-                  srpski={"Jezik:"}
-                  prevod={prevedi}
-                />
-              </p>
-
-              {"   "}
-              <Switch
-                onColor="rgb(255,255,255,0.6)"
-                offColor="rgb(255,255,255,0.6)"
-                checked={prevedi}
-                onChange={handlePrevedi}
-                uncheckedIcon={
-                  <ReactCountryFlag
-                    countryCode="RS"
-                    style={{
-                      fontSize: "30px",
-                    }}
+            <div style={{ position: "relative" }}>
+              <div className="switchPolje">
+                <p style={{ marginBottom: "5px" }}>
+                  {" "}
+                  <Prevodilac
+                    engleski={"Language:"}
+                    srpski={"Jezik:"}
+                    prevod={prevedi}
                   />
-                }
-                checkedIcon={
-                  <ReactCountryFlag
-                    countryCode="GB"
-                    style={{ fontSize: "30px", paddingRight: "20px" }}
-                  />
-                }
-              />
-              <br />
+                </p>
 
-              <p style={{ marginTop: "5px" }}>
-                <Prevodilac
-                  engleski={"English"}
-                  srpski={"Srpski"}
-                  prevod={prevedi}
+                {"   "}
+                <Switch
+                  onColor="rgb(255,255,255,0.6)"
+                  offColor="rgb(255,255,255,0.6)"
+                  checked={prevedi}
+                  onChange={handlePrevedi}
+                  uncheckedIcon={
+                    <ReactCountryFlag
+                      countryCode="RS"
+                      style={{
+                        fontSize: "30px",
+                      }}
+                    />
+                  }
+                  checkedIcon={
+                    <ReactCountryFlag
+                      countryCode="GB"
+                      style={{ fontSize: "30px", paddingRight: "20px" }}
+                    />
+                  }
                 />
-              </p>
+                <br />
+
+                <p style={{ marginTop: "5px" }}>
+                  <Prevodilac
+                    engleski={"English"}
+                    srpski={"Srpski"}
+                    prevod={prevedi}
+                  />
+                </p>
+              </div>
             </div>
           </div>
         </header>
