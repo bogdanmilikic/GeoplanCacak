@@ -332,111 +332,114 @@ function App() {
   }, [sati, minuti]);
 
   return (
-    <div>
-      {openPopUp && (
-        <PopUp
-          naslov={naslov}
-          setOpenPopUp={setOpenPopUp}
-          sadrzaj={popUpSadrzaj}
-        />
-      )}
+    <>
+      <div className="bg"></div>
+      <div>
+        {openPopUp && (
+          <PopUp
+            naslov={naslov}
+            setOpenPopUp={setOpenPopUp}
+            sadrzaj={popUpSadrzaj}
+          />
+        )}
 
-      <header>
-        <GornjiDeo
-          prevedi={prevedi}
-          slika="GeoPlanLogo.png"
-          aktivno={aktivnoDugme}
-          setAktivno={setAktivnoDugme}
-          setUradiAnimaciju={setUradiAnimaciju}
-        />
-        <div className="logInDugmePozicija">
-          <div className="switchPolje">
-            <p style={{ marginBottom: "5px" }}>
-              {" "}
-              <Prevodilac
-                engleski={"Language:"}
-                srpski={"Jezik:"}
-                prevod={prevedi}
-              />
-            </p>
-
-            {"   "}
-            <Switch
-              onColor="rgb(255,255,255,0.6)"
-              offColor="rgb(255,255,255,0.6)"
-              checked={prevedi}
-              onChange={handlePrevedi}
-              uncheckedIcon={
-                <ReactCountryFlag
-                  countryCode="RS"
-                  style={{
-                    fontSize: "30px",
-                  }}
+        <header>
+          <GornjiDeo
+            prevedi={prevedi}
+            slika="GeoPlanLogo.png"
+            aktivno={aktivnoDugme}
+            setAktivno={setAktivnoDugme}
+            setUradiAnimaciju={setUradiAnimaciju}
+          />
+          <div className="logInDugmePozicija">
+            <div className="switchPolje">
+              <p style={{ marginBottom: "5px" }}>
+                {" "}
+                <Prevodilac
+                  engleski={"Language:"}
+                  srpski={"Jezik:"}
+                  prevod={prevedi}
                 />
-              }
-              checkedIcon={
-                <ReactCountryFlag
-                  countryCode="GB"
-                  style={{ fontSize: "30px", paddingRight: "20px" }}
-                />
-              }
-            />
-            <br />
+              </p>
 
-            <p style={{ marginTop: "5px" }}>
-              <Prevodilac
-                engleski={"English"}
-                srpski={"Srpski"}
-                prevod={prevedi}
-              />
-            </p>
-          </div>
-        </div>
-      </header>
-      <br />
-      <main>
-        <div className={`divCentriranje ${animate ? "animate" : ""}`}>
-          {aktivnoDugme === 4 ? forma : sadrzajNiz[aktivnoDugme]}
-        </div>
-        {aktivnoDugme === 4 ? (
-          <div className={`divCentriranje ${animate ? "animate" : ""}`}>
-            <p
-              className="sadrzajNaslov"
-              style={{
-                color: "white",
-                backgroundColor: "rgb(46, 60, 70, 0.7)",
-                textAlign: "center",
-                borderRadius: "10px",
-                padding: "15px",
-              }}
-            >
-              Zakazani termini
-            </p>
-          </div>
-        ) : undefined}
-        {aktivnoDugme === 4 ? (
-          <div className={`divCentriranje ${animate ? "animate" : ""}`}>
-            <div className="parentContainer">
-              <div className="terminList">
-                {localLista.map((item) => (
-                  <Termin
-                    id={item.id}
-                    key={item.id}
-                    usluga={item.usluga}
-                    datum={item.datum}
-                    userName={item.userName}
-                    sati={item.sati}
-                    minuti={item.minuti}
-                    ime={userName}
-                    handleOtkazi={handleOtkazi}
+              {"   "}
+              <Switch
+                onColor="rgb(255,255,255,0.6)"
+                offColor="rgb(255,255,255,0.6)"
+                checked={prevedi}
+                onChange={handlePrevedi}
+                uncheckedIcon={
+                  <ReactCountryFlag
+                    countryCode="RS"
+                    style={{
+                      fontSize: "30px",
+                    }}
                   />
-                ))}
-              </div>
+                }
+                checkedIcon={
+                  <ReactCountryFlag
+                    countryCode="GB"
+                    style={{ fontSize: "30px", paddingRight: "20px" }}
+                  />
+                }
+              />
+              <br />
+
+              <p style={{ marginTop: "5px" }}>
+                <Prevodilac
+                  engleski={"English"}
+                  srpski={"Srpski"}
+                  prevod={prevedi}
+                />
+              </p>
             </div>
           </div>
-        ) : undefined}
-      </main>
-    </div>
+        </header>
+        <br />
+        <main>
+          <div className={`divCentriranje ${animate ? "animate" : ""}`}>
+            {aktivnoDugme === 4 ? forma : sadrzajNiz[aktivnoDugme]}
+          </div>
+          {aktivnoDugme === 4 ? (
+            <div className={`divCentriranje ${animate ? "animate" : ""}`}>
+              <p
+                className="sadrzajNaslov"
+                style={{
+                  color: "white",
+                  backgroundColor: "rgb(46, 60, 70, 0.7)",
+                  textAlign: "center",
+                  borderRadius: "10px",
+                  padding: "15px",
+                }}
+              >
+                Zakazani termini
+              </p>
+            </div>
+          ) : undefined}
+          {aktivnoDugme === 4 ? (
+            <div className={`divCentriranje ${animate ? "animate" : ""}`}>
+              <div className="parentContainer">
+                <div className="terminList">
+                  {localLista.map((item) => (
+                    <Termin
+                      id={item.id}
+                      key={item.id}
+                      usluga={item.usluga}
+                      datum={item.datum}
+                      userName={item.userName}
+                      sati={item.sati}
+                      minuti={item.minuti}
+                      ime={userName}
+                      handleOtkazi={handleOtkazi}
+                    />
+                  ))}
+                </div>
+              </div>
+            </div>
+          ) : undefined}
+        </main>
+      </div>
+    </>
   );
 }
 
