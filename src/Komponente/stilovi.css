@@ -22,7 +22,11 @@ body {
   height: 220px;
   border-radius: 0;
 }
-
+.centrirajSliku {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
 .gornjiDeoDiv {
   margin: 0;
   padding: 0;
@@ -98,7 +102,7 @@ body {
   width: auto;
   padding-left: 30px;
   padding-right: 30px;
-  background-color: rgb(165, 158, 158);
+  background-color: rgb(214, 212, 212, 0.95);
   border-radius: 30px;
   height: auto;
 }
@@ -327,7 +331,7 @@ iframe {
   column-gap: 50px;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1080px) {
   .terminList {
     grid-template-columns: repeat(3, 1fr); /* 3 items per row */
   }
@@ -335,16 +339,36 @@ iframe {
   .gornjiDeoDugmici {
     border-radius: 10px 10px 0px 0px;
     width: auto;
+    transition: 0.3s all ease-in-out;
+    padding-left: 5px;
+    padding-right: 5px;
   }
-
+  .gornjiDeoDugmici:hover {
+    width: auto;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
   ul {
     margin-left: 0px;
   }
   .gornjiDeoDugmiciAktivno {
     border-radius: 10px 10px 0px 0px;
+    width: auto;
+    padding-left: 5px;
+    padding-right: 5px;
   }
 }
-
+.switchPolje {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 17px;
+  width: 100px;
+  border-radius: 10px;
+  background-color: rgb(255, 255, 255, 0.6);
+  color: rgb(18, 27, 58);
+  padding: 5px;
+}
 @media (max-width: 768px) {
   .terminList {
     grid-template-columns: repeat(2, 1fr); /* 2 items per row */
@@ -513,6 +537,14 @@ ul {
   }
 }
 @media (max-width: 810px) {
+  .logo {
+    width: 500px;
+  }
+  .logInDugmePozicija {
+    position: absolute;
+    top: 32px;
+    right: 20px;
+  }
   .gornjiDeoDugmici {
     width: 90%;
     margin-bottom: 10px;
@@ -537,6 +569,42 @@ ul {
   }
 }
 @media (max-width: 450px) {
+  .logo {
+    width: 280px;
+  }
+  .centrirajSliku {
+    display: block;
+  }
+  .switchPolje {
+    padding: 0px;
+    font-size: 15px;
+    width: 80px;
+  }
+
+  .gornjiDeoDugmiciAktivno {
+    margin-left: 10px;
+  }
+  .gornjiDeoDugmici:hover {
+    text-align: left;
+  }
+}
+@media (max-width: 400px) {
+  .logo {
+    width: 240px;
+  }
+  .centrirajSliku {
+    display: block;
+  }
+  .switchPolje {
+    padding: 0px;
+    font-size: 12px;
+    width: 64px;
+  }
+  .logInDugmePozicija {
+    position: absolute;
+    top: 27px;
+    right: 20px;
+  }
   .gornjiDeoDugmiciAktivno {
     margin-left: 10px;
   }

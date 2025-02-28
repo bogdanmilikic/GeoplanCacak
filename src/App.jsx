@@ -19,12 +19,14 @@ import LogIn from "./Komponente/LogIn";
 import ComboBox from "./Komponente/ComboBox";
 import Termin from "./Komponente/Termin";
 import lista from "./Komponente/lista";
-
-
+import Switch from "react-switch";
+import { Flag } from "@mui/icons-material";
+import ReactCountryFlag from "react-country-flag";
+import Prevodilac from "./Komponente/Prevodilac";
+import tekstLista from "./Komponente/Tekst";
 
 function App() {
   const [eMail, setEmaill] = useState("");
-  const [engleski, setEngleski] = useState(false);
   const [localLista, setLocalLista] = useState(lista);
   const [openPopUp, setOpenPopUp] = useState(false);
   const [sifra, setSifra] = useState("");
@@ -37,13 +39,15 @@ function App() {
   const [brojTelefona, setBrojTelefona] = useState("");
   const [minuti, setMinuti] = useState(0);
   const [sati, setSati] = useState(0);
+  const [uradiAnimaciju, setUradiAnimaciju] = useState(0);
+  const [prevedi, setPrevedi] = useState(false);
   const [datum, setDatum] = useState("");
   const handleMinuti = (e) => {
     const value = e.target.value;
     if (value === "" || isNaN(value)) {
-      setMinuti(0); 
+      setMinuti(0);
     } else {
-      const numericValue = Math.max(0, Math.min(59, Number(value))); 
+      const numericValue = Math.max(0, Math.min(59, Number(value)));
       setMinuti(numericValue);
     }
   };
@@ -52,7 +56,7 @@ function App() {
     if (value === "" || isNaN(value)) {
       setSati(0);
     } else {
-      const numericValue = Math.max(1, Math.min(18, Number(value))); 
+      const numericValue = Math.max(1, Math.min(18, Number(value)));
       setSati(numericValue);
     }
   };
@@ -81,7 +85,6 @@ function App() {
   };
   const sortirajListu = (listaZaSortiranje) => {
     return listaZaSortiranje.sort((a, b) => {
-   
       const datumA = new Date(
         `${a.datum}T${String(a.sati).padStart(2, "0")}:${String(
           a.minuti
@@ -93,12 +96,10 @@ function App() {
         ).padStart(2, "0")}`
       );
 
-     
       return datumA - datumB;
     });
   };
 
- 
   useEffect(() => {
     const sortiranaLista = sortirajListu(lista);
     setLocalLista(sortiranaLista);
@@ -162,31 +163,33 @@ function App() {
     ime: eMail,
     sifra: "sifra1234",
   };
- 
 
   const sadrzajNiz = [
     <div className="divSadrzaj">
-      <p className="sadrzajNaslov">O nama</p>
-      <hr />
-      <p className="sadrzaj">
-        Geodetski biro ГЕОПЛАН osnovan je s ciljem pružanja vrhunskih geodetskih
-        usluga koje zadovoljavaju najviše standarde u struci.
-        <br />
-        Naš tim čine iskusni geodeti sa dugogodišnjim iskustvom, posvećeni
-        preciznosti i profesionalizmu u svakom projektu.
-        <br />
-        Koristimo najmoderniju opremu i tehnologiju kako bismo obezbedili
-        pouzdane rezultate i ispunili specifične zahteve naših klijenata.
-        <br /> Bez obzira na veličinu projekta, pristupamo svakom zadatku s
-        istom pažnjom i posvećenošću.Kroz godine rada stekli smo poverenje
-        mnogih klijenata zahvaljujući stručnosti, tačnosti i brzim rokovima.
-        <br />
-        Naša misija je da budemo vaš pouzdan partner u svim geodetskim
-        poslovima, osiguravajući kvalitetne rezultate koji podržavaju vaše
-        projekte.Verujemo u važnost preciznosti, transparentnosti i
-        kontinuiranog usavršavanja, kako bismo ostali lideri u oblasti
-        geodezije.
+      <p className="sadrzaj" style={{ textAlign: "center" }}>
+        <FontAwesomeIcon
+          icon={faChevronCircleUp}
+          style={{ marginRight: "5px" }}
+        />
+        {"     "}
+        <Prevodilac
+          engleski={"Choose one of the options"}
+          srpski={"Izaberite jednu od opcija"}
+          prevod={prevedi}
+        />
+        {"     "}
+        <FontAwesomeIcon
+          icon={faChevronCircleUp}
+          style={{ marginLeft: "5px" }}
+        />
       </p>
+    </div>,
+    <div className="divSadrzaj">
+      <Prevodilac
+        engleski={tekstLista[0].engleski}
+        prevod={prevedi}
+        srpski={tekstLista[0].srpski}
+      />
     </div>,
     <div className="divSadrzaj">
       <p className="sadrzajNaslov">Kontakt</p>
@@ -202,9 +205,16 @@ function App() {
           icon={faStreetView}
           style={{ marginTop: "10px" }}
         />{" "}
-        Ulica -32000 Čačak, Kralja Petra I br.30
+        <Prevodilac engleski={"Street"} srpski={"Ulica"} prevod={prevedi} />{" "}
+        -32000 Čačak, Kralja Petra I br.30
         <br />
-        <FontAwesomeIcon icon={faMap} style={{ marginTop: "10px" }} /> Lokacija:
+        <FontAwesomeIcon icon={faMap} style={{ marginTop: "10px" }} />{" "}
+        <Prevodilac
+          engleski={"Location"}
+          srpski={"Lokacija"}
+          prevod={prevedi}
+        />
+        :
         <center>
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2875.1868052831746!2d20.345789348121226!3d43.8933976209781!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4757721121a7b28b%3A0x4c37e4ab230a399f!2zR2VvUGzQsG4!5e0!3m2!1ssr!2srs!4v1736286608564!5m2!1ssr!2srs"
@@ -217,48 +227,11 @@ function App() {
       </p>
     </div>,
     <div className="divSadrzaj">
-      <p className="sadrzajNaslov">Usluge</p>
-      <hr />
-      <p className="sadrzaj">
-        Dobrodošli u naš biro, gde spoj geodezije i arhitekture donosi precizna
-        i kreativna rešenja za vaš prostor.
-        <br /> Naš biro pruža sveobuhvatne geodetske usluge koje garantuju
-        preciznost i pouzdanost u svakom projektu.
-      </p>
-      <p className="sadrzaj" style={{ marginTop: "-30px" }}>
-        Nudimo:
-        <ul style={{ marginLeft: "50px" }}>
-          {" "}
-          <li> Projekte geodetskog obeležavanja</li>
-          <li>Parcelaciju i fizičke deobe</li>
-          <li> Snimanje objekata i izvedenog stanja </li>
-          <li> Sudska veštačenja</li>
-          <li>Omeđavanja</li>
-          <li> Izradu geodetskih podloga za projektovanje </li>
-          <li> Prenošenje projektovanog stanja na teren</li>
-        </ul>
-      </p>
-      <p className="sadrzaj" style={{ marginTop: "-30px" }}>
-        Pored geodetskih usluga, pružamo i širok spektar arhitektonskih usluga:
-        <ul style={{ marginLeft: "50px", marginBottom: "10px" }}>
-          <li> Idejna rešenja za sve tipove objekata</li>{" "}
-          <li>
-            {" "}
-            Izrada tehničke dokumentacije za objekte i parterno uređenje{" "}
-          </li>
-          <li>
-            {" "}
-            Izrada izveštaja o zatečenom stanju objekta za potrebe ozakonjenja
-            objekta
-          </li>{" "}
-          <li> Projektovanje enterijera prilagođeno vašim potrebama</li>
-        </ul>{" "}
-        Naš tim kombinuje tehničku preciznost i kreativnost kako bi svaki
-        projekat bio funkcionalan, estetski usklađen i u skladu sa svim
-        propisima. <br/>Bilo da vam je potrebna pravna sigurnost vaše nepokretnosti,
-        izrada projekata ili terenski radovi visoke tačnosti, naš tim stoji vam
-        na raspolaganju.
-      </p>
+      <Prevodilac
+        engleski={tekstLista[1].engleski}
+        srpski={tekstLista[1].srpski}
+        prevod={prevedi}
+      />
     </div>,
     <div className="divSadrzaj">
       {userName === "Prijava" ? (
@@ -271,15 +244,6 @@ function App() {
     </div>,
   ];
 
-  const [sadrzaj, setSadrzaj] = useState(
-    <div className="divSadrzaj">
-      <p className="sadrzaj" style={{textAlign:"center"}}>
-        <FontAwesomeIcon icon={faChevronCircleUp}  style={{marginRight:"5px"}}/>
-        {"     "}Izaberite jednu od opcija{"     "}
-        <FontAwesomeIcon icon={faChevronCircleUp}  style={{marginLeft:"5px"}} />
-      </p>
-    </div>
-  );
   const [animate, setAnimate] = useState(false);
   const forma = (
     <div className="divSadrzaj">
@@ -346,11 +310,14 @@ function App() {
       </div>
     </div>
   );
+  const handlePrevedi = () => {
+    setPrevedi(!prevedi);
+  };
   useEffect(() => {
     setAnimate(true);
     const timeout = setTimeout(() => setAnimate(false), 500);
     return () => clearTimeout(timeout);
-  }, [sadrzaj]);
+  }, [uradiAnimaciju]);
   useEffect(() => {
     console.log("eMail value changed:", eMail); // Logs the value every time it changes
     console.log("Vrednost objekta se promenio", informacijeKorisnika.ime);
@@ -374,44 +341,60 @@ function App() {
 
       <header>
         <GornjiDeo
+          prevedi={prevedi}
           slika="GeoPlanLogo.png"
           aktivno={aktivnoDugme}
           setAktivno={setAktivnoDugme}
-          sadrzaj={sadrzajNiz}
-          setSadrzaj={setSadrzaj}
+          setUradiAnimaciju={setUradiAnimaciju}
         />
-        <div>
-       
+        <div className="logInDugmePozicija">
+          <div className="switchPolje">
+            <p style={{ marginBottom: "5px" }}>
+              {" "}
+              <Prevodilac
+                engleski={"Language:"}
+                srpski={"Jezik:"}
+                prevod={prevedi}
+              />
+            </p>
+
+            {"   "}
+            <Switch
+              onColor="rgb(255,255,255,0.6)"
+              offColor="rgb(255,255,255,0.6)"
+              checked={prevedi}
+              onChange={handlePrevedi}
+              uncheckedIcon={
+                <ReactCountryFlag
+                  countryCode="RS"
+                  style={{
+                    fontSize: "30px",
+                  }}
+                />
+              }
+              checkedIcon={
+                <ReactCountryFlag
+                  countryCode="GB"
+                  style={{ fontSize: "30px", paddingRight: "20px" }}
+                />
+              }
+            />
+            <br />
+
+            <p style={{ marginTop: "5px" }}>
+              <Prevodilac
+                engleski={"English"}
+                srpski={"Srpski"}
+                prevod={prevedi}
+              />
+            </p>
+          </div>
         </div>
-        <LogInDugme
-          logIn={
-            <LogIn
-              userName={eMail}
-              password={sifra}
-              setUserName={setUserName}
-              setOpenPopUp={setOpenPopUp}
-            />
-          }
-          signUp={
-            <SignUp
-              eMail={eMail} // Pass eMail state from App
-              setEmaill={setEmaill}
-              setSifra={setSifra}
-            />
-          }
-          open={openPopUp}
-          naslov={naslov}
-          userName={userName}
-          setUserName={setUserName}
-          setOpenPopUp={setOpenPopUp}
-          setSadrzaj={setPopUpSadrzaj}
-          setNaslov={setNaslov}
-        /> 
       </header>
       <br />
       <main>
         <div className={`divCentriranje ${animate ? "animate" : ""}`}>
-          {aktivnoDugme === 4 ? forma : sadrzaj}
+          {aktivnoDugme === 4 ? forma : sadrzajNiz[aktivnoDugme]}
         </div>
         {aktivnoDugme === 4 ? (
           <div className={`divCentriranje ${animate ? "animate" : ""}`}>
@@ -451,7 +434,6 @@ function App() {
           </div>
         ) : undefined}
       </main>
- 
     </div>
   );
 }

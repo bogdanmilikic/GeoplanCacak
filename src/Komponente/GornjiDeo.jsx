@@ -7,27 +7,35 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 import { faCheckToSlot } from "@fortawesome/free-solid-svg-icons/faCheckToSlot";
-const GornjiDeo = ({ slika, setSadrzaj, sadrzaj, aktivno, setAktivno,prijava}) => {
+import Prevodilac from "./Prevodilac";
+const GornjiDeo = ({
+  slika,
+  aktivno,
+  setAktivno,
+  prijava,
+  setUradiAnimaciju,
+  prevedi,
+}) => {
   const handleInfo = () => {
     setAktivno(1);
-    setSadrzaj(sadrzaj[0]);
+    setUradiAnimaciju(1);
   };
   const handleKontakt = () => {
     setAktivno(2);
-    setSadrzaj(sadrzaj[1]);
+    setUradiAnimaciju(2);
   };
   const handleUsluge = () => {
     setAktivno(3);
-    setSadrzaj(sadrzaj[2]);
+    setUradiAnimaciju(3);
   };
   const handleZakazivanje = () => {
     setAktivno(4);
-    setSadrzaj(sadrzaj[3]);
+    setUradiAnimaciju(4);
   };
   return (
     <div class="gornjiDeoDiv">
       <menu>
-        <center>
+        <div className="centrirajSliku">
           {" "}
           <img
             src={slika}
@@ -40,17 +48,28 @@ const GornjiDeo = ({ slika, setSadrzaj, sadrzaj, aktivno, setAktivno,prijava}) =
               marginTop: "10px",
             }}
           />
-        </center>
+        </div>
 
         <Dugmici aktivno={aktivno} brojDugmeta={1} handleUradi={handleInfo}>
-          <FontAwesomeIcon icon={faCircleInfo} /> O nama
+          <FontAwesomeIcon icon={faCircleInfo} />{" "}
+          <Prevodilac engleski={"About"} srpski={"O nama"} prevod={prevedi} />
         </Dugmici>
         <Dugmici aktivno={aktivno} brojDugmeta={2} handleUradi={handleKontakt}>
           {" "}
-          <FontAwesomeIcon icon={faContactCard} /> Kontakt
+          <FontAwesomeIcon icon={faContactCard} />{" "}
+          <Prevodilac
+            srpski={"Kontakt"}
+            engleski={"Contact"}
+            prevod={prevedi}
+          />
         </Dugmici>
         <Dugmici aktivno={aktivno} brojDugmeta={3} handleUradi={handleUsluge}>
-          <FontAwesomeIcon icon={faCheckToSlot} /> Usluge
+          <FontAwesomeIcon icon={faCheckToSlot} />{" "}
+          <Prevodilac
+            srpski={"Usluge"}
+            engleski={"Services"}
+            prevod={prevedi}
+          />
         </Dugmici>
         <Dugmici
           aktivno={aktivno}
