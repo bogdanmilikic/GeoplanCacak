@@ -381,6 +381,9 @@ iframe {
   ul {
     margin-left: 0px;
   }
+  body {
+    background-attachment: scroll;
+  }
 }
 @media (max-width: 480px) {
   .terminList {
@@ -397,6 +400,9 @@ iframe {
   }
   ul {
     margin-left: 0px;
+  }
+  body {
+    background-attachment: scroll;
   }
 }
 .parentContainer {
@@ -427,6 +433,7 @@ ul {
   /* Adjusting overall layout */
   body {
     padding: 0 10px;
+    background-attachment: scroll;
   }
   .gornjiDeoDugmici {
     border-radius: 10px;
@@ -566,6 +573,9 @@ ul {
   iframe {
     max-width: 90%;
   }
+  body {
+    background-attachment: scroll;
+  }
 }
 @media (max-width: 450px) {
   .logo {
@@ -586,6 +596,9 @@ ul {
   .gornjiDeoDugmici:hover {
     text-align: left;
   }
+  body {
+    background-attachment: scroll;
+  }
 }
 @media (max-width: 400px) {
   .logo {
@@ -597,7 +610,7 @@ ul {
   .switchPolje {
     padding: 0px;
     font-size: 12px;
-    width: 64px;
+    width: 70px;
   }
   .logInDugmePozicija {
     position: absolute;
@@ -609,5 +622,8 @@ ul {
   }
   .gornjiDeoDugmici:hover {
     text-align: left;
+  }
+  body {
+    background-attachment: scroll;
   }
 }
