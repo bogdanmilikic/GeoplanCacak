@@ -192,7 +192,9 @@ function App() {
       />
     </div>,
     <div className="divSadrzaj">
-      <p className="sadrzajNaslov">Kontakt</p>
+      <p className="sadrzajNaslov">
+        <Prevodilac srpski={"Kontakt"} engleski={"Contact"} prevod={prevedi} />
+      </p>
       <hr />
       <p className="sadrzaj">
         <FontAwesomeIcon icon={faEnvelope} /> Email - geoplancacak@mts.rs /
