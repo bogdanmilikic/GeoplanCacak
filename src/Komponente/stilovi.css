@@ -367,6 +367,41 @@ iframe {
     padding-right: 5px;
   }
 }
+@media (max-width: 860px) {
+  .logo {
+    width: 500px;
+  }
+  .logInDugmePozicija {
+    position: absolute;
+    top: 32px;
+    right: 20px;
+  }
+  .gornjiDeoDugmici {
+    width: 90%;
+    margin-bottom: 10px;
+    text-align: left;
+    border-radius: 10px;
+    padding-left: 15px;
+  }
+  .gornjiDeoDugmici:hover {
+    text-align: left;
+    width: 90%;
+  }
+  .gornjiDeoDugmiciAktivno {
+    border-radius: 10px;
+    margin-bottom: 10px;
+    width: 90%;
+    text-align: left;
+    padding-left: 15px;
+    margin-left: 45px;
+  }
+  iframe {
+    max-width: 90%;
+  }
+  body {
+    background-attachment: scroll;
+  }
+}
 .switchPolje {
   align-items: center;
   justify-content: center;
@@ -395,26 +430,7 @@ iframe {
     background-attachment: scroll;
   }
 }
-@media (max-width: 480px) {
-  .terminList {
-    grid-template-columns: 1fr; /* 1 item per row */
-  }
-  .gornjiDeoDugmici:hover {
-    text-align: left;
-  }
-  .gornjiDeoDugmici {
-    border-radius: 10px;
-  }
-  .gornjiDeoDugmiciAktivno {
-    border-radius: 10px;
-  }
-  ul {
-    margin-left: 0px;
-  }
-  body {
-    background-attachment: scroll;
-  }
-}
+
 .parentContainer {
   display: flex;
   justify-content: center; /* Center container horizontally */
@@ -455,11 +471,13 @@ ul {
     margin-left: 0px;
   }
   .logo {
-    width: 350px; /* Resize logo */
-    height: auto; /* Maintain aspect ratio */
-    margin: 0 auto; /* Center it */
+    width: 450px;
+    height: auto;
+    margin: 0 auto;
   }
-
+  .centrirajSliku {
+    display: block;
+  }
   .gornjiDeoDiv {
     height: auto; /* Allow height to adjust naturally */
     padding: 10px;
@@ -552,36 +570,26 @@ ul {
     margin: 10px 0;
   }
 }
-@media (max-width: 810px) {
+@media (max-width: 550px) {
   .logo {
-    width: 500px;
+    width: 350px;
   }
-  .logInDugmePozicija {
-    position: absolute;
-    top: 32px;
-    right: 20px;
-  }
-  .gornjiDeoDugmici {
-    width: 90%;
-    margin-bottom: 10px;
-    text-align: left;
-    border-radius: 10px;
-    padding-left: 15px;
+}
+@media (max-width: 480px) {
+  .terminList {
+    grid-template-columns: 1fr; /* 1 item per row */
   }
   .gornjiDeoDugmici:hover {
     text-align: left;
-    width: 90%;
+  }
+  .gornjiDeoDugmici {
+    border-radius: 10px;
   }
   .gornjiDeoDugmiciAktivno {
     border-radius: 10px;
-    margin-bottom: 10px;
-    width: 90%;
-    text-align: left;
-    padding-left: 15px;
-    margin-left: 45px;
   }
-  iframe {
-    max-width: 90%;
+  ul {
+    margin-left: 0px;
   }
   body {
     background-attachment: scroll;
@@ -639,5 +647,11 @@ ul {
   }
   body {
     background-attachment: scroll;
+  }
+}
+@media (max-width: 350px) {
+  .logo {
+    width: 200px;
+    height: 90px;
   }
 }
