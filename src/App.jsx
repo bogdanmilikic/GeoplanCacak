@@ -24,6 +24,7 @@ import { Flag } from "@mui/icons-material";
 import ReactCountryFlag from "react-country-flag";
 import Prevodilac from "./Komponente/Prevodilac";
 import tekstLista from "./Komponente/Tekst";
+import CountryFlag from "react-country-flag";
 
 function App() {
   const [eMail, setEmaill] = useState("");
@@ -371,6 +372,7 @@ function App() {
                   onChange={handlePrevedi}
                   uncheckedIcon={
                     <ReactCountryFlag
+                      svg
                       countryCode="RS"
                       style={{
                         fontSize: "30px",
@@ -379,8 +381,11 @@ function App() {
                   }
                   checkedIcon={
                     <ReactCountryFlag
+                      svg
                       countryCode="GB"
-                      style={{ fontSize: "30px", paddingRight: "20px" }}
+                      style={{
+                        fontSize: "30px",
+                      }}
                     />
                   }
                 />
