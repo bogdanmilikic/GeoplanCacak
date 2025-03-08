@@ -14,8 +14,6 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import LogInDugme from "./Komponente/LogInDugme";
 import PopUp from "./Komponente/PopUp";
-import SignUp from "./Komponente/SignUp";
-import LogIn from "./Komponente/LogIn";
 import ComboBox from "./Komponente/ComboBox";
 import Termin from "./Komponente/Termin";
 import lista from "./Komponente/lista";
@@ -175,7 +173,7 @@ function App() {
         {"     "}
         <Prevodilac
           engleski={"Choose one of the options"}
-          srpski={"Izaberite jednu od opcija"}
+          srpski={"Изаберите једну од опција"}
           prevod={prevedi}
         />
         {"     "}
