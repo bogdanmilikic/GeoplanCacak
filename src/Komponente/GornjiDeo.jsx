@@ -52,13 +52,13 @@ const GornjiDeo = ({
 
         <Dugmici aktivno={aktivno} brojDugmeta={1} handleUradi={handleInfo}>
           <FontAwesomeIcon icon={faCircleInfo} />{" "}
-          <Prevodilac engleski={"About"} srpski={"O nama"} prevod={prevedi} />
+          <Prevodilac engleski={"About"} srpski={"О нама"} prevod={prevedi} />
         </Dugmici>
         <Dugmici aktivno={aktivno} brojDugmeta={2} handleUradi={handleKontakt}>
           {" "}
           <FontAwesomeIcon icon={faContactCard} />{" "}
           <Prevodilac
-            srpski={"Kontakt"}
+            srpski={"Контакт"}
             engleski={"Contact"}
             prevod={prevedi}
           />
@@ -66,7 +66,7 @@ const GornjiDeo = ({
         <Dugmici aktivno={aktivno} brojDugmeta={3} handleUradi={handleUsluge}>
           <FontAwesomeIcon icon={faCheckToSlot} />{" "}
           <Prevodilac
-            srpski={"Usluge"}
+            srpski={"Услуге"}
             engleski={"Services"}
             prevod={prevedi}
           />

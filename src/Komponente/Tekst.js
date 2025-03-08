@@ -3,26 +3,27 @@ const tekstLista = [
     id: 0,
     srpski: (
       <>
-        <p className="sadrzajNaslov">O nama</p>
+        <p className="sadrzajNaslov">О нама</p>
         <hr />
         <p className="sadrzaj">
-          Geodetski biro ГЕОПЛАН osnovan je s ciljem pružanja vrhunskih
-          geodetskih usluga koje zadovoljavaju najviše standarde u struci.
+          Геодетски биро ГЕОПЛАН основан је с циљем пружања врхунских геодетских
+          услуга које задовољавају највише стандарде у струци.
           <br />
-          Naš tim čine iskusni geodeti sa dugogodišnjim iskustvom, posvećeni
-          preciznosti i profesionalizmu u svakom projektu.
+          Наш тим чине искусни геодети са дугогодишњим искуством, посвећени
+          прецизности и професионализму у сваком пројекту.
           <br />
-          Koristimo najmoderniju opremu i tehnologiju kako bismo obezbedili
-          pouzdane rezultate i ispunili specifične zahteve naših klijenata.
-          <br /> Bez obzira na veličinu projekta, pristupamo svakom zadatku s
-          istom pažnjom i posvećenošću.Kroz godine rada stekli smo poverenje
-          mnogih klijenata zahvaljujući stručnosti, tačnosti i brzim rokovima.
+          Користимо најмодернију опрему и технологију како бисмо обезбедили
+          поуздане резултате и испунили специфичне захтеве наших клијената.
           <br />
-          Naša misija je da budemo vaš pouzdan partner u svim geodetskim
-          poslovima, osiguravajući kvalitetne rezultate koji podržavaju vaše
-          projekte.Verujemo u važnost preciznosti, transparentnosti i
-          kontinuiranog usavršavanja, kako bismo ostali lideri u oblasti
-          geodezije.
+          Без обзира на величину пројекта, приступамо сваком задатку с истом
+          пажњом и посвећеношћу. Кроз године рада стекли смо поверење многих
+          клијената захваљујући стручности, тачности и брзим роковима.
+          <br />
+          Наша мисија је да будемо ваш поуздан партнер у свим геодетским
+          пословима, осигуравајући квалитетне резултате који подржавају ваше
+          пројекте. Верујемо у важност прецизности, транспарентности и
+          континуираног усавршавања, како бисмо остали лидери у области
+          геодезије.
         </p>
       </>
     ),
@@ -57,49 +58,49 @@ const tekstLista = [
     srpski: (
       <>
         {" "}
-        <p className="sadrzajNaslov">Usluge</p>
+        <p className="sadrzajNaslov">Услуге</p>
         <hr />
         <p className="sadrzaj">
-          Dobrodošli u naš biro, gde spoj geodezije i arhitekture donosi
-          precizna i kreativna rešenja za vaš prostor.
-          <br /> Naš biro pruža sveobuhvatne geodetske usluge koje garantuju
-          preciznost i pouzdanost u svakom projektu.
+          Добродошли у наш биро, где спој геодезије и архитектуре доноси
+          прецизна и креативна решења за ваш простор.
+          <br /> Наш биро пружа свеобухватне геодетске услуге које гарантују
+          прецизност и поузданост у сваком пројекту.
         </p>
         <p className="sadrzaj" style={{ marginTop: "-30px" }}>
-          Nudimo:
+          Нудимо:
           <ul style={{ marginLeft: "50px" }}>
             {" "}
-            <li> Projekte geodetskog obeležavanja</li>
-            <li>Parcelaciju i fizičke deobe</li>
-            <li> Snimanje objekata i izvedenog stanja </li>
-            <li> Sudska veštačenja</li>
-            <li>Omeđavanja</li>
-            <li> Izradu geodetskih podloga za projektovanje </li>
-            <li> Prenošenje projektovanog stanja na teren</li>
+            <li> Пројекте геодетског обележавања</li>
+            <li>Парцелизацију и физичке деобе</li>
+            <li> Снимање објеката и изведеног стања </li>
+            <li> Судска вештачења</li>
+            <li>Омеђавање</li>
+            <li> Израду геодетских подлога за пројектовање</li>
+            <li> Преношење пројектованог стања на терен</li>
           </ul>
         </p>
         <p className="sadrzaj" style={{ marginTop: "-30px" }}>
-          Pored geodetskih usluga, pružamo i širok spektar arhitektonskih
-          usluga:
+          Поред геодетских услуга, пружамо и широк спектар архитектонских
+          услуга:
           <ul style={{ marginLeft: "50px", marginBottom: "10px" }}>
-            <li> Idejna rešenja za sve tipove objekata</li>{" "}
+            <li> Идејна решења за све типове објеката</li>{" "}
             <li>
               {" "}
-              Izrada tehničke dokumentacije za objekte i parterno uređenje{" "}
+              Израда техничке документације за објекте и партерно уређење{" "}
             </li>
             <li>
               {" "}
-              Izrada izveštaja o zatečenom stanju objekta za potrebe ozakonjenja
-              objekta
+              Израда извештаја о затеченом стању објекта за потребе озакоњења
+              објекта
             </li>{" "}
-            <li> Projektovanje enterijera prilagođeno vašim potrebama</li>
+            <li>Пројектовање ентеријера прилагођено вашим потребама</li>
           </ul>{" "}
-          Naš tim kombinuje tehničku preciznost i kreativnost kako bi svaki
-          projekat bio funkcionalan, estetski usklađen i u skladu sa svim
-          propisima. <br />
-          Bilo da vam je potrebna pravna sigurnost vaše nepokretnosti, izrada
-          projekata ili terenski radovi visoke tačnosti, naš tim stoji vam na
-          raspolaganju.
+          Наш тим комбинује техничку прецизност и креативност како би сваки
+          пројекат био функционалан, естетски усаглашен и у складу са свим
+          прописима. <br />
+          Било да вам је потребна правна сигурност ваше непокретности, израда
+          пројеката или теренски радови високе тачности, наш тим стоји вам на
+          располагању.
         </p>
       </>
     ),

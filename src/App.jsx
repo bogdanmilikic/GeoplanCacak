@@ -194,27 +194,31 @@ function App() {
     </div>,
     <div className="divSadrzaj">
       <p className="sadrzajNaslov">
-        <Prevodilac srpski={"Kontakt"} engleski={"Contact"} prevod={prevedi} />
+        <Prevodilac srpski={"Контакт"} engleski={"Contact"} prevod={prevedi} />
       </p>
       <hr />
       <p className="sadrzaj">
         <FontAwesomeIcon icon={faEnvelope} /> Email - geoplancacak@mts.rs /
         milan.geoplan@gmail.com
         <br />
-        <FontAwesomeIcon icon={faPhone} style={{ marginTop: "10px" }} /> Tel/Fax
-        - 032/341 368 /// 064/133 71 58
+        <FontAwesomeIcon icon={faPhone} style={{ marginTop: "10px" }} />{" "}
+        Тел/Факс - 032/341 368 /// 064/133 71 58
         <br />
         <FontAwesomeIcon
           icon={faStreetView}
           style={{ marginTop: "10px" }}
         />{" "}
-        <Prevodilac engleski={"Street"} srpski={"Ulica"} prevod={prevedi} />{" "}
-        -32000 Čačak, Kralja Petra I br.30
+        <Prevodilac engleski={"Street"} srpski={"Улица"} prevod={prevedi} /> -
+        <Prevodilac
+          engleski={" 32000 Čačak, Kralja Petra I br.30"}
+          srpski={" 32000 Чачак, Краља Петра I бр.30"}
+          prevod={prevedi}
+        />
         <br />
         <FontAwesomeIcon icon={faMap} style={{ marginTop: "10px" }} />{" "}
         <Prevodilac
           engleski={"Location"}
-          srpski={"Lokacija"}
+          srpski={"Локација"}
           prevod={prevedi}
         />
         :
