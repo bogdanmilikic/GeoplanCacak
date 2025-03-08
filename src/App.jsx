@@ -175,7 +175,7 @@ function App() {
         {"     "}
         <Prevodilac
           engleski={"Choose one of the options"}
-          srpski={"Izaberite jednu od opcija"}
+          srpski={"Изаберите једну од опција"}
           prevod={prevedi}
         />
         {"     "}
