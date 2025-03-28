@@ -131,7 +131,7 @@ li {
 .sadrzajNaslov {
   font-size: 33px;
   text-align: left;
-  padding-left: 50px;
+  padding-left: 10px;
   font-weight: bold;
 }
 iframe {
@@ -286,7 +286,8 @@ iframe {
   border-radius: 10px;
   height: 40px;
   font-size: 18px;
-  margin-left: 10px;
+  margin-top: 10px;
+
   padding-left: 5px;
   border: none;
 }
@@ -339,7 +340,68 @@ iframe {
   grid-template-columns: repeat(7, 1fr); /* 5 items per row */
   column-gap: 50px;
 }
+.poljeZaPitanje {
+  padding-left: 5px;
+  border-radius: 10px;
+  font-size: 18px;
+  margin-top: 10px;
+  padding-left: 5px;
+  resize: none;
+  width: 80%;
+  height: 200px;
+  border: none;
+}
+.poljeZaPitanje:focus {
+  border: 2px solid #555;
+  outline: none;
+}
+.recaptcha-container {
+  width: 150px;
+  height: 150px;
+  display: inline-block;
+  border-radius: 15px; /* Apply border-radius */
+  overflow: hidden; /* Ensure that anything outside the border radius is hidden */
 
+  /* Optional: padding to ensure enough space */
+}
+
+/* Make sure iframe fits the container with rounded corners */
+.recaptcha-container iframe {
+  border-radius: 15px !important; /* Apply border-radius on the iframe itself */
+}
+.pitanjeDugme {
+  font-size: 30px;
+  height: 70px;
+  padding: 100%;
+  width: 80%;
+  padding: 2px;
+  background-color: rgb(18, 27, 58);
+  color: white;
+  text-align: center;
+  transition: all 0.2s ease-in-out;
+  border-radius: 20px;
+  border: none;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.pitanjeDugme:hover {
+  background-color: rgb(76, 95, 163);
+}
+.neaktivnoDugmePitanje {
+  font-size: 30px;
+  height: 70px;
+  padding: 100%;
+  width: 80%;
+  padding: 2px;
+  background-color: rgb(46, 46, 48);
+  color: white;
+  text-align: center;
+  transition: all 0.2s ease-in-out;
+  border-radius: 20px;
+  border: none;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
 @media (max-width: 1080px) {
   .terminList {
     grid-template-columns: repeat(3, 1fr); /* 3 items per row */
@@ -370,6 +432,26 @@ iframe {
 @media (max-width: 860px) {
   .logo {
     width: 500px;
+  }
+  .poljeZaPitanje {
+    border-radius: 10px;
+    height: 40px;
+    font-size: 18px;
+    margin-top: 10px;
+    margin-left: 0;
+    padding-left: 5px;
+    resize: none;
+    width: 100%;
+    height: 200px;
+    border: none;
+  }
+  .pitanjeDugme {
+    width: 100%;
+    font-size: 28px;
+  }
+  .neaktivnoDugmePitanje {
+    width: 100%;
+    font-size: 28px;
   }
   .logInDugmePozicija {
     position: absolute;
@@ -417,6 +499,18 @@ iframe {
   .terminList {
     grid-template-columns: repeat(2, 1fr); /* 2 items per row */
   }
+  .poljeZaPitanje {
+    border-radius: 10px;
+    height: 40px;
+    font-size: 18px;
+    margin-top: 10px;
+    margin-left: 0;
+    padding-left: 5px;
+    resize: none;
+    width: 100%;
+    height: 200px;
+    border: none;
+  }
   .gornjiDeoDugmici {
     border-radius: 10px;
   }
@@ -460,6 +554,18 @@ ul {
   body {
     padding: 0 10px;
     background-attachment: scroll;
+  }
+  .poljeZaPitanje {
+    border-radius: 10px;
+    height: 40px;
+    font-size: 18px;
+    margin-top: 10px;
+    margin-left: 0;
+    padding-left: 5px;
+    resize: none;
+    width: 100%;
+    height: 200px;
+    border: none;
   }
   .gornjiDeoDugmici {
     border-radius: 10px;
@@ -569,15 +675,43 @@ ul {
     width: 100%;
     margin: 10px 0;
   }
+  .zakazivanjeDatum {
+    font-size: 18px;
+  }
 }
 @media (max-width: 550px) {
   .logo {
     width: 350px;
   }
+  .poljeZaPitanje {
+    border-radius: 10px;
+    height: 40px;
+    font-size: 18px;
+    margin-top: 10px;
+    margin-left: 0;
+    padding-left: 5px;
+    resize: none;
+    width: 100%;
+    height: 200px;
+    border: none;
+  }
 }
+
 @media (max-width: 480px) {
   .terminList {
     grid-template-columns: 1fr; /* 1 item per row */
+  }
+  .poljeZaPitanje {
+    border-radius: 10px;
+    height: 40px;
+    font-size: 18px;
+    margin-top: 10px;
+    margin-left: 0;
+    padding-left: 5px;
+    resize: none;
+    width: 100%;
+    height: 200px;
+    border: none;
   }
   .gornjiDeoDugmici:hover {
     text-align: left;
@@ -599,6 +733,18 @@ ul {
   .logo {
     width: 280px;
   }
+  .poljeZaPitanje {
+    border-radius: 10px;
+    height: 40px;
+    font-size: 15px;
+    margin-top: 10px;
+    margin-left: 0;
+    padding-left: 5px;
+    resize: none;
+    width: 100%;
+    height: 200px;
+    border: none;
+  }
   .centrirajSliku {
     display: block;
   }
@@ -618,6 +764,9 @@ ul {
   .gornjiDeoDugmici:hover {
     text-align: left;
   }
+  .zakazivanjeDatum {
+    font-size: 15px;
+  }
   body {
     background-attachment: scroll;
   }
@@ -625,6 +774,21 @@ ul {
 @media (max-width: 400px) {
   .logo {
     width: 240px;
+  }
+  .poljeZaPitanje {
+    border-radius: 10px;
+    height: 40px;
+    font-size: 15px;
+    margin-top: 10px;
+    margin-left: 0;
+    padding-left: 5px;
+    resize: none;
+    width: 100%;
+    height: 200px;
+    border: none;
+  }
+  .zakazivanjeDatum {
+    font-size: 15px;
   }
   .centrirajSliku {
     display: block;
@@ -653,5 +817,20 @@ ul {
   .logo {
     width: 200px;
     height: 90px;
+  }
+  .poljeZaPitanje {
+    border-radius: 10px;
+    height: 40px;
+    font-size: 15px;
+    margin-top: 10px;
+    margin-left: 0;
+    padding-left: 5px;
+    resize: none;
+    width: 100%;
+    height: 200px;
+    border: none;
+  }
+  .zakazivanjeDatum {
+    font-size: 15px;
   }
 }

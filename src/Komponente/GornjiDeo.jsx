@@ -33,7 +33,7 @@ const GornjiDeo = ({
     setUradiAnimaciju(4);
   };
   return (
-    <div class="gornjiDeoDiv">
+    <div className="gornjiDeoDiv">
       <menu>
         <div className="centrirajSliku">
           {" "}
