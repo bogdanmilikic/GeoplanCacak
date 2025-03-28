@@ -66,7 +66,7 @@ const tekstLista = [
           <br /> Наш биро пружа свеобухватне геодетске услуге које гарантују
           прецизност и поузданост у сваком пројекту.
         </p>
-        <p className="sadrzaj" style={{ marginTop: "-30px" }}>
+        <div className="sadrzaj" style={{ marginTop: "-30px" }}>
           Нудимо:
           <ul style={{ marginLeft: "50px" }}>
             {" "}
@@ -78,8 +78,8 @@ const tekstLista = [
             <li> Израду геодетских подлога за пројектовање</li>
             <li> Преношење пројектованог стања на терен</li>
           </ul>
-        </p>
-        <p className="sadrzaj" style={{ marginTop: "-30px" }}>
+        </div>
+        <div className="sadrzaj" style={{ marginTop: "-30px" }}>
           Поред геодетских услуга, пружамо и широк спектар архитектонских
           услуга:
           <ul style={{ marginLeft: "50px", marginBottom: "10px" }}>
@@ -101,7 +101,7 @@ const tekstLista = [
           Било да вам је потребна правна сигурност ваше непокретности, израда
           пројеката или теренски радови високе тачности, наш тим стоји вам на
           располагању.
-        </p>
+        </div>
       </>
     ),
     engleski: (
@@ -116,7 +116,7 @@ const tekstLista = [
           Our office provides comprehensive geodetic services that ensure
           accuracy and reliability in every project.
         </p>
-        <p className="sadrzaj" style={{ marginTop: "-30px" }}>
+        <div className="sadrzaj" style={{ marginTop: "-30px" }}>
           We offer:
           <ul style={{ marginLeft: "50px" }}>
             {" "}
@@ -128,8 +128,8 @@ const tekstLista = [
             <li> Preparation of geodetic bases for design</li>
             <li>Transferring the designed state to the field</li>
           </ul>
-        </p>
-        <p className="sadrzaj" style={{ marginTop: "-30px" }}>
+        </div>
+        <div className="sadrzaj" style={{ marginTop: "-30px" }}>
           In addition to geodetic services, we also provide a wide range of
           architectural services:
           <ul style={{ marginLeft: "50px", marginBottom: "10px" }}>
@@ -151,7 +151,7 @@ const tekstLista = [
           with all regulations. <br />
           Whether you need legal security for your property, project
           development, or high-precision fieldwork, our team is at your service.
-        </p>
+        </div>
       </>
     ),
   },

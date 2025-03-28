@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import GornjiDeo from "./Komponente/GornjiDeo";
-import stilovi from "./Komponente/stilovi.css";
+import "./Komponente/stilovi.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faStreetView,
@@ -23,6 +23,7 @@ import ReactCountryFlag from "react-country-flag";
 import Prevodilac from "./Komponente/Prevodilac";
 import tekstLista from "./Komponente/Tekst";
 import CountryFlag from "react-country-flag";
+import Pitanje from "./Komponente/Pitanje";
 
 function App() {
   const [eMail, setEmaill] = useState("");
@@ -195,7 +196,7 @@ function App() {
         <Prevodilac srpski={"Контакт"} engleski={"Contact"} prevod={prevedi} />
       </p>
       <hr />
-      <p className="sadrzaj">
+      <div className="sadrzaj">
         <FontAwesomeIcon icon={faEnvelope} /> Email - geoplancacak@mts.rs /
         milan.geoplan@gmail.com
         <br />
@@ -223,13 +224,22 @@ function App() {
         <center>
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2875.1868052831746!2d20.345789348121226!3d43.8933976209781!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4757721121a7b28b%3A0x4c37e4ab230a399f!2zR2VvUGzQsG4!5e0!3m2!1ssr!2srs!4v1736286608564!5m2!1ssr!2srs"
-            allowfullscreen=""
+            allowFullScreen=""
             loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
+            referrerPolicy="no-referrer-when-downgrade"
             title="Lokacija"
           ></iframe>
         </center>
-      </p>
+      </div>
+      <p className="sadrzajNaslov">
+        <Prevodilac
+          prevod={prevedi}
+          srpski={"Поставите питање"}
+          engleski={"Ask a question"}
+        />{" "}
+      </p>{" "}
+      <hr />
+      <Pitanje prevod={prevedi} />
     </div>,
     <div className="divSadrzaj">
       <Prevodilac
