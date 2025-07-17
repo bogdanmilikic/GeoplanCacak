@@ -834,3 +834,8 @@ ul {
     font-size: 15px;
   }
 }
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: light;
+  }
+}
