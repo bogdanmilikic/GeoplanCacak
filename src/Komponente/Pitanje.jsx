@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Prevodilac from "./Prevodilac";
 import ReCAPTCHA from "react-google-recaptcha";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -13,6 +13,7 @@ const Pitanje = ({ prevod }) => {
   const [eMail, setEmail] = useState("");
   const [pitanje, setPitanje] = useState("");
   const [posalji, setPosalji] = useState(false);
+  const eMailRef = useRef(null);
   const handleRecaptcha = (token) => {
     if (token) {
       setPosalji(true);
@@ -25,7 +26,7 @@ const Pitanje = ({ prevod }) => {
   const handlePitanje = (e) => {
     e.preventDefault();
 
-    if (eMail.trim() === "") {
+    if (eMail.trim() === "" || eMailRef.current.checkValidity() === false) {
       alert("Unesite validnu email adresu.");
       return;
     }
@@ -96,10 +97,13 @@ const Pitanje = ({ prevod }) => {
       <input
         style={{ width: "80%" }}
         placeholder={eMailPlace}
+        type="email"
         className="zakazivanjeDatum"
         onChange={(e) => {
           setEmail(e.target.value);
         }}
+        ref={eMailRef}
+        required
       ></input>
       <textarea
         className="poljeZaPitanje"
