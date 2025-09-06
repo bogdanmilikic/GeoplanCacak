@@ -103,6 +103,64 @@ body {
 .divCentriranje.animate {
   animation: fadeInScale 0.5s ease-out;
 }
+@keyframes slideUlaz {
+  0% {
+    transform: translateX(300px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slideIzlaz {
+  0% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(300px);
+    opacity: 0;
+  }
+}
+.alertObavestenjeUlaz {
+  animation: slideUlaz 1.2s;
+  position: fixed;
+  top: 25%;
+  right: 0%;
+  z-index: 1000;
+  border-radius: 25px 0px 0px 25px;
+  color: white;
+  text-align: center;
+  font-size: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+.alertObavestenjeIzlaz {
+  position: fixed;
+  top: 25%;
+  right: 0%;
+  z-index: 1000;
+  border-radius: 25px 0px 0px 25px;
+  color: white;
+  text-align: center;
+  font-size: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  animation: slideIzlaz 1.2s;
+  opacity: 0;
+}
+.alertDugme {
+  border: none;
+  background-color: transparent;
+  color: white;
+  font-size: 20px;
+  margin-left: 20px;
+}
 
 .divSadrzaj {
   justify-content: center;
@@ -119,7 +177,7 @@ li {
   margin-top: 5px;
 }
 .sadrzaj {
-  font-size: 28px;
+  font-size: 24px;
 
   word-wrap: break-word;
   white-space: normal;
@@ -732,6 +790,15 @@ ul {
 @media (max-width: 450px) {
   .logo {
     width: 280px;
+  }
+  .alertObavestenjeIzlaz {
+    font-size: 20px;
+  }
+  .alertObavestenjeUlaz {
+    font-size: 20px;
+  }
+  .alertDugme {
+    font-size: 17 px;
   }
   .poljeZaPitanje {
     border-radius: 10px;

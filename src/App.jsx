@@ -24,6 +24,7 @@ import Prevodilac from "./Komponente/Prevodilac";
 import tekstLista from "./Komponente/Tekst";
 import CountryFlag from "react-country-flag";
 import Pitanje from "./Komponente/Pitanje";
+import Alert from "./Komponente/Alert";
 
 function App() {
   const [eMail, setEmaill] = useState("");
@@ -42,6 +43,11 @@ function App() {
   const [uradiAnimaciju, setUradiAnimaciju] = useState(0);
   const [prevedi, setPrevedi] = useState(false);
   const [datum, setDatum] = useState("");
+  const [poruka, setPoruka] = useState({
+    srb: "",
+    eng: "",
+  });
+
   const handleMinuti = (e) => {
     const value = e.target.value;
     if (value === "" || isNaN(value)) {
@@ -239,7 +245,7 @@ function App() {
         />{" "}
       </p>{" "}
       <hr />
-      <Pitanje prevod={prevedi} />
+      <Pitanje prevod={prevedi} poruka={poruka} setPoruka={setPoruka} />
     </div>,
     <div className="divSadrzaj">
       <Prevodilac
