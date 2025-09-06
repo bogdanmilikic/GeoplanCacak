@@ -4,8 +4,9 @@ import ReCAPTCHA from "react-google-recaptcha";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
 import emailjs from "@emailjs/browser";
+import Alert from "./Alert";
 
-const Pitanje = ({ prevod }) => {
+const Pitanje = ({ prevod, poruka, setPoruka }) => {
   const [imePlace, setImePlace] = useState("");
   const [eMailPlace, setEMailPlace] = useState("");
   const [pitanjePlace, setPitanjePlace] = useState("");
@@ -14,6 +15,9 @@ const Pitanje = ({ prevod }) => {
   const [pitanje, setPitanje] = useState("");
   const [posalji, setPosalji] = useState(false);
   const eMailRef = useRef(null);
+  const [obavestenje, setObavestenje] = useState(false);
+  const [uspesno, setUspesno] = useState(false);
+
   const handleRecaptcha = (token) => {
     if (token) {
       setPosalji(true);
@@ -27,23 +31,30 @@ const Pitanje = ({ prevod }) => {
     e.preventDefault();
 
     if (eMail.trim() === "" || eMailRef.current.checkValidity() === false) {
-      alert("Unesite validnu email adresu.");
+      setPoruka({
+        srb: "Унети валидну еmail адресу",
+        eng: "Please enter a valid email adress",
+      });
+      setUspesno(false);
+      setObavestenje(true);
       return;
     }
     if (ime.trim() === "" || ime.trim() === undefined) {
-      alert(
-        prevod === true
-          ? "'First and last name' must be entered in order to send your question"
-          : "'Име и презиме' поље мора бити попуњено да би се послало ваше питање "
-      );
+      setPoruka({
+        srb: "Име и презиме' поље мора бити попуњено да би се послало ваше питање",
+        eng: "'First and last name' must be entered in order to send your question",
+      });
+      setUspesno(false);
+      setObavestenje(true);
       return;
     }
     if (pitanje.trim() === "" || pitanje.trim() === undefined) {
-      alert(
-        prevod === true
-          ? "'The question' field must be entered in order to send your question"
-          : "'Питање' поље мора бити попуњено да би се послало ваше питање "
-      );
+      setPoruka({
+        srb: "'Питање' поље мора бити попуњено да би се послало ваше питање",
+        eng: "'The question' field must be entered in order to send your question",
+      });
+      setUspesno(false);
+      setObavestenje(true);
       return;
     }
     const templateParams = {
@@ -62,11 +73,22 @@ const Pitanje = ({ prevod }) => {
       .then(
         (response) => {
           console.log("Uspešno poslato!", response.status, response.text);
-          alert("Email je uspešno poslat!");
+
+          setPoruka({
+            srb: "Питање је успешно послато!",
+            eng: "The question has been sent successfuly!",
+          });
+          setUspesno(true);
+          setObavestenje(true);
         },
         (error) => {
           console.error("Greška pri slanju emaila:", error);
-          alert("Došlo je do greške pri slanju emaila.");
+          setPoruka({
+            srb: "Дошло је до грешке при слању питања",
+            eng: "An error has occurred while sending your question",
+          });
+          setUspesno(false);
+          setObavestenje(true);
         }
       );
   };
@@ -86,6 +108,14 @@ const Pitanje = ({ prevod }) => {
 
   return (
     <div>
+      {obavestenje ? (
+        <Alert
+          setOpen={setObavestenje}
+          uspesno={uspesno}
+          poruka={prevod ? poruka.eng : poruka.srb}
+        />
+      ) : undefined}
+
       <input
         style={{ width: "80%" }}
         placeholder={imePlace}
