@@ -6,7 +6,7 @@ import { faCheck } from "@fortawesome/free-solid-svg-icons";
 import emailjs from "@emailjs/browser";
 import Alert from "./Alert";
 
-const Pitanje = ({ prevod, poruka, setPoruka }) => {
+const Pitanje = ({ prevod, poruka, setPoruka, aktivno }) => {
   const [imePlace, setImePlace] = useState("");
   const [eMailPlace, setEMailPlace] = useState("");
   const [pitanjePlace, setPitanjePlace] = useState("");
@@ -105,6 +105,11 @@ const Pitanje = ({ prevod, poruka, setPoruka }) => {
     }
     console.log(imePlace);
   }, [prevod, imePlace]);
+  useEffect(() => {
+    if (aktivno !== 2) {
+      setObavestenje(false);
+    }
+  }, [aktivno, setObavestenje]);
 
   return (
     <div>

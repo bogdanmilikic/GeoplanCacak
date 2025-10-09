@@ -25,6 +25,7 @@ import tekstLista from "./Komponente/Tekst";
 import CountryFlag from "react-country-flag";
 import Pitanje from "./Komponente/Pitanje";
 import Alert from "./Komponente/Alert";
+import ImageSlide from "./Komponente/ImageSlide";
 
 function App() {
   const [eMail, setEmaill] = useState("");
@@ -43,6 +44,13 @@ function App() {
   const [uradiAnimaciju, setUradiAnimaciju] = useState(0);
   const [prevedi, setPrevedi] = useState(false);
   const [datum, setDatum] = useState("");
+
+  const slike = [
+    "logo512.png",
+    "GeoPlanLogo.png",
+    "Logo.png",
+    "https://cdn.wallpapersafari.com/38/64/2VqZKx.jpg",
+  ];
   const [poruka, setPoruka] = useState({
     srb: "",
     eng: "",
@@ -190,12 +198,20 @@ function App() {
         />
       </p>
     </div>,
-    <div className="divSadrzaj">
+    <div
+      className="divSadrzaj"
+      style={window.innerWidth >= 800 ? { width: "90%" } : null}
+    >
       <Prevodilac
         engleski={tekstLista[0].engleski}
         prevod={prevedi}
         srpski={tekstLista[0].srpski}
       />
+      <p className="sadrzajNaslov">
+        <Prevodilac engleski={"Gallery"} srpski={"Галерија"} prevod={prevedi} />
+      </p>
+      <hr />
+      <ImageSlide slike={slike} />
     </div>,
     <div className="divSadrzaj">
       <p className="sadrzajNaslov">
