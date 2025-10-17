@@ -170,7 +170,7 @@ body {
   width: auto;
   padding-left: 30px;
   padding-right: 30px;
-  background-color: rgb(214, 212, 212, 0.95);
+  background-color: rgba(231, 229, 229, 0.95);
   border-radius: 30px;
   height: auto;
 }
@@ -184,6 +184,7 @@ li {
   padding-left: 0px;
   padding-right: 0px;
   padding-top: 20px;
+  line-height: 1.5;
   padding-bottom: 20px;
 }
 .sadrzajNaslov {
@@ -193,31 +194,41 @@ li {
   font-weight: bold;
 }
 .imageSlideDiv {
-  display: flex;
-  width: 80%;
-  height: 600px;
+  position: relative;
+  width: 600px;
+  height: 350px;
   border-radius: 10px;
-  justify-content: space-between;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
   overflow: hidden;
+  margin: 20px auto;
+  background-color: #181717;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+.imageSlideSlika {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  height: 100%;
+  object-fit: cover; /* ispuni ceo div bez izobličenja */
 }
 .imageSlideDugmici {
-  height: 20%;
+  height: 60px;
   width: 5%;
-  position: relative;
-  top: 45%;
   border: none;
   border-radius: 5px;
   color: white;
   background-color: rgba(82, 81, 81, 0.555);
+  font-size: larger;
+  z-index: 1000;
 }
 .imageSlideDugmici:hover {
   background-color: rgba(82, 81, 81);
-  transition: 0.4s;
+  transition: 0.4s ease-in-out;
 }
 iframe {
   width: 1000px;
@@ -519,8 +530,13 @@ iframe {
     width: 500px;
   }
   .imageSlideDiv {
-    height: 350px;
-    width: 100%;
+    height: 390px;
+    width: 85%;
+  }
+  .imageSlideDugmici {
+    height: 70px;
+
+    width: 8%;
   }
   .poljeZaPitanje {
     border-radius: 10px;
@@ -589,7 +605,10 @@ iframe {
     grid-template-columns: repeat(2, 1fr); /* 2 items per row */
   }
   .imageSlideDiv {
-    height: 330px;
+    height: 350px;
+  }
+  .imageSlideDugmici {
+    height: 75px;
   }
   .poljeZaPitanje {
     border-radius: 10px;
@@ -778,6 +797,7 @@ ul {
   .imageSlideDiv {
     height: 280px;
   }
+
   .poljeZaPitanje {
     border-radius: 10px;
     height: 40px;
@@ -789,6 +809,9 @@ ul {
     width: 100%;
     height: 200px;
     border: none;
+  }
+  .imageSlideDugmici {
+    height: 50px;
   }
 }
 
@@ -832,8 +855,9 @@ ul {
     width: 280px;
   }
   .imageSlideDiv {
-    height: 160px;
+    height: 200px;
   }
+
   .alertObavestenjeIzlaz {
     font-size: 20px;
   }
@@ -886,7 +910,10 @@ ul {
     width: 240px;
   }
   .imageSlideDiv {
-    height: 150px;
+    height: 270px;
+  }
+  .imageSlideDugmici {
+    width: 10%;
   }
   .poljeZaPitanje {
     border-radius: 10px;
@@ -924,6 +951,12 @@ ul {
   }
   body {
     background-attachment: scroll;
+  }
+}
+@media (max-width: 390px) {
+  .imageSlideDiv {
+    height: 200px;
+    width: 95%;
   }
 }
 @media (max-width: 350px) {

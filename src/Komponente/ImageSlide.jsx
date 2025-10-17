@@ -19,19 +19,17 @@ const ImageSlide = ({ slike }) => {
   };
   return (
     <center>
-      <div
-        className="imageSlideDiv"
-        style={{
-          backgroundImage: `url(${slike[index]})`,
-        }}
-      >
+      <div className="imageSlideDiv">
         <button className="imageSlideDugmici" onClick={hanldeLevoDugme}>
           <FontAwesomeIcon icon={faChevronLeft} />
         </button>
+
         <button className="imageSlideDugmici" onClick={handleDesnoDugme}>
           {" "}
           <FontAwesomeIcon icon={faChevronRight} />
         </button>
+
+        <img src={slike[index]} className="imageSlideSlika" />
       </div>
     </center>
   );
