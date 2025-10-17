@@ -46,10 +46,25 @@ function App() {
   const [datum, setDatum] = useState("");
 
   const slike = [
-    "logo512.png",
-    "GeoPlanLogo.png",
-    "Logo.png",
-    "https://cdn.wallpapersafari.com/38/64/2VqZKx.jpg",
+    "Slika1.jpg",
+
+    "Slika4.jpg",
+    "Slika5.jpg",
+    "Slika6.jpg",
+
+    "Slika8.jpg",
+
+    "Slika9.jpg",
+    "Slika10.jpg",
+
+    "Slika11.jpg",
+    "Slika12.jpg",
+    "Slika13.jpg",
+    "Slika14.jpg",
+    "Slika15.jpg",
+    "Slika16.jpg",
+    "Slika17.jpg",
+    "Slika18.jpg",
   ];
   const [poruka, setPoruka] = useState({
     srb: "",
@@ -211,7 +226,24 @@ function App() {
         <Prevodilac engleski={"Gallery"} srpski={"Галерија"} prevod={prevedi} />
       </p>
       <hr />
-      <ImageSlide slike={slike} />
+      <menu
+        style={
+          window.innerWidth >= 1080
+            ? { display: "flex", justifyContent: "space-between" }
+            : null
+        }
+      >
+        <p className="sadrzaj">
+          <Prevodilac
+            srpski={tekstLista[2].srpski}
+            engleski={tekstLista[2].engleski}
+            prevod={prevedi}
+          />
+        </p>
+        <div style={window.innerWidth >= 1080 ? { marginLeft: "20px" } : null}>
+          <ImageSlide slike={slike} />
+        </div>
+      </menu>
     </div>,
     <div className="divSadrzaj">
       <p className="sadrzajNaslov">

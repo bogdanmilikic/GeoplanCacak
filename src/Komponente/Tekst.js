@@ -155,5 +155,41 @@ const tekstLista = [
       </>
     ),
   },
+  {
+    id: 2,
+    srpski: (
+      <>
+        Ова галерија приказује сегменте нашег свакодневног рада на терену и у
+        припреми геодетских пројеката. Фотографије осликавају различите фазе
+        процеса мерења – од изласка на терен, позиционирања инструмената и
+        прикупљања података, до сарадње са инвеститорима и осталим стручњацима
+        на лицу места. Наш тим користи савремену геодетску опрему високе
+        прецизности, прилагођену условима рада у различитим теренским
+        ситуацијама — од урбаних средина до неприступачних подручја. Посебну
+        пажњу посвећујемо безбедности, поузданости и тачности сваког мерења, јер
+        квалитет података зависи од професионалног приступа сваком кораку на
+        терену. Кроз ове фотографије желимо да приближимо део атмосфере са наших
+        теренских активности и покажемо посвећеност која стоји иза сваког
+        геодетског мерења и пројекта.
+      </>
+    ),
+    engleski: (
+      <>
+        This gallery showcases segments of our everyday fieldwork and the
+        preparation of geodetic projects. The photographs illustrate different
+        stages of the surveying process – from going out into the field,
+        positioning instruments, and collecting data, to collaborating with
+        investors and other professionals on-site. Our team uses modern,
+        high-precision surveying equipment adapted to various field conditions —
+        from urban environments to remote and hard-to-reach areas.
+        <br />
+        We pay special attention to safety, reliability, and accuracy in every
+        measurement, as the quality of data depends on a professional approach
+        at every step in the field. Through these photographs, we aim to share a
+        glimpse of the atmosphere during our field activities and highlight the
+        dedication behind every geodetic survey and project.
+      </>
+    ),
+  },
 ];
 export default tekstLista;
