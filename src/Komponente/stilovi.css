@@ -606,6 +606,7 @@ iframe {
   }
   .imageSlideDiv {
     height: 350px;
+    width: 95%;
   }
   .imageSlideDugmici {
     height: 75px;
@@ -956,7 +957,6 @@ ul {
 @media (max-width: 390px) {
   .imageSlideDiv {
     height: 200px;
-    width: 95%;
   }
 }
 @media (max-width: 350px) {
