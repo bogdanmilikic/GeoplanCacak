@@ -30,6 +30,11 @@ const ImageSlide = ({ slike }) => {
         </button>
 
         <img src={slike[index]} className="imageSlideSlika" />
+        <div className="divImageBroj">
+          {" "}
+          {index < 9 ? "0" : null}
+          {index + 1} / {slike.length}{" "}
+        </div>
       </div>
     </center>
   );

@@ -230,6 +230,17 @@ li {
   background-color: rgba(82, 81, 81);
   transition: 0.4s ease-in-out;
 }
+.divImageBroj {
+  font-size: 20px;
+  z-index: 1500;
+  position: absolute;
+  top: 87%;
+  left: 45%;
+  border-radius: 20px;
+  background-color: rgb(0, 0, 0, 0.7);
+  padding: 4px;
+  color: white;
+}
 iframe {
   width: 1000px;
   height: 450px;
@@ -608,6 +619,9 @@ iframe {
     height: 350px;
     width: 95%;
   }
+  .divImageBroj {
+    font-size: 16px;
+  }
   .imageSlideDugmici {
     height: 75px;
   }
@@ -820,6 +834,9 @@ ul {
   .terminList {
     grid-template-columns: 1fr; /* 1 item per row */
   }
+  .divImageBroj {
+    left: 43%;
+  }
   .imageSlideDiv {
     height: 250px;
   }
@@ -854,6 +871,10 @@ ul {
 @media (max-width: 450px) {
   .logo {
     width: 280px;
+  }
+  .divImageBroj {
+    top: 82%;
+    left: 41%;
   }
   .imageSlideDiv {
     height: 180px;
@@ -963,6 +984,9 @@ ul {
   .logo {
     width: 200px;
     height: 90px;
+  }
+  .divImageBroj {
+    top: 78%;
   }
   .imageSlideDiv {
     height: 144px;
