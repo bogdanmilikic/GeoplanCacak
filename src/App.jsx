@@ -230,7 +230,7 @@ function App() {
         style={
           window.innerWidth >= 1080
             ? { display: "flex", justifyContent: "space-between" }
-            : null
+            : undefined
         }
       >
         <p className="sadrzaj">
