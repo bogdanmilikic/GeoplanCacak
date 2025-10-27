@@ -559,6 +559,13 @@ iframe {
     padding-right: 5px;
   }
 }
+@media (max-width: 950px) and (max-height: 450px) {
+  .imageShowSlika {
+    margin-top: 10% !important;
+    width: 75%;
+    height: 60% !important;
+  }
+}
 @media (max-width: 1079px) {
   .imageShowSlika {
     margin-top: 25%;
