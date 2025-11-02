@@ -20,7 +20,10 @@ const DonjiDeo = ({ pozicija }) => {
             borderRadius: "10px ",
           }}
         >
-          <img src="GeoPlanLogo.png" style={{ width: "150px" }} />
+          <center>
+            {" "}
+            <img src="GeoPlanLogo.png" style={{ width: "140px" }} />
+          </center>
         </div>
         <div
           style={{
