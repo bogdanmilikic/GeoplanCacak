@@ -6,6 +6,7 @@ import {
   faStreetView,
   faPhone,
   faCheck,
+  faClock,
 } from "@fortawesome/free-solid-svg-icons";
 import {
   faChevronCircleUp,
@@ -26,6 +27,7 @@ import CountryFlag from "react-country-flag";
 import Pitanje from "./Komponente/Pitanje";
 import Alert from "./Komponente/Alert";
 import ImageSlide from "./Komponente/ImageSlide";
+import DonjiDeo from "./Komponente/DonjiDeo";
 
 function App() {
   const [eMail, setEmaill] = useState("");
@@ -228,7 +230,7 @@ function App() {
       <hr />
       <menu
         style={
-          window.innerWidth >= 1080
+          window.innerWidth >= 1920
             ? { display: "flex", justifyContent: "space-between" }
             : undefined
         }
@@ -268,7 +270,37 @@ function App() {
           prevod={prevedi}
         />
         <br />
-        <FontAwesomeIcon icon={faMap} style={{ marginTop: "10px" }} />{" "}
+        <FontAwesomeIcon icon={faClock} style={{ marginTop: "10px" }} />{" "}
+        <Prevodilac
+          engleski={"Work time"}
+          srpski={"Радно време"}
+          prevod={prevedi}
+        />{" "}
+        :
+        <ul style={{ marginLeft: "50px" }}>
+          <li>
+            <Prevodilac
+              prevod={prevedi}
+              engleski={"Monday-Friday"}
+              srpski={"Понедељак-Петак"}
+            />{" "}
+            : 07:00-15:00
+          </li>
+          <li>
+            <Prevodilac
+              prevod={prevedi}
+              engleski={"Saturday-Sunday"}
+              srpski={"Subota-Nedelja"}
+            />
+            :{" "}
+            <Prevodilac
+              prevod={prevedi}
+              engleski={"closed"}
+              srpski={"zatvoreno"}
+            />
+          </li>
+        </ul>
+        <FontAwesomeIcon icon={faMap} style={{ marginTop: "5px" }} />{" "}
         <Prevodilac
           engleski={"Location"}
           srpski={"Локација"}
@@ -509,9 +541,11 @@ function App() {
                 </div>
               </div>
             </div>
-          ) : undefined}
+          ) : undefined}{" "}
         </main>
       </div>
+
+      <DonjiDeo pozicija={aktivnoDugme === 0 ? "absolute" : "relative"} />
     </>
   );
 }
