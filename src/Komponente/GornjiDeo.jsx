@@ -1,12 +1,11 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Dugmici from "./Dugmici";
 import {
-  faCalendarCheck,
   faCircleInfo,
   faContactCard,
+  faImages,
 } from "@fortawesome/free-solid-svg-icons";
 
-import { faCheckToSlot } from "@fortawesome/free-solid-svg-icons/faCheckToSlot";
 import Prevodilac from "./Prevodilac";
 const GornjiDeo = ({
   slika,
@@ -24,13 +23,10 @@ const GornjiDeo = ({
     setAktivno(2);
     setUradiAnimaciju(2);
   };
-  const handleUsluge = () => {
+
+  const handleGalerija = () => {
     setAktivno(3);
     setUradiAnimaciju(3);
-  };
-  const handleZakazivanje = () => {
-    setAktivno(4);
-    setUradiAnimaciju(4);
   };
   return (
     <div className="gornjiDeoDiv">
@@ -63,21 +59,15 @@ const GornjiDeo = ({
             prevod={prevedi}
           />
         </Dugmici>
-        <Dugmici aktivno={aktivno} brojDugmeta={3} handleUradi={handleUsluge}>
-          <FontAwesomeIcon icon={faCheckToSlot} />{" "}
-          <Prevodilac
-            srpski={"Услуге"}
-            engleski={"Services"}
-            prevod={prevedi}
-          />
-        </Dugmici>
-        <Dugmici
-          aktivno={aktivno}
-          brojDugmeta={4}
-          handleUradi={handleZakazivanje}
-        >
+
+        <Dugmici aktivno={aktivno} brojDugmeta={3} handleUradi={handleGalerija}>
           {" "}
-          <FontAwesomeIcon icon={faCalendarCheck} /> Zakazivanje
+          <FontAwesomeIcon icon={faImages} />{" "}
+          <Prevodilac
+            prevod={prevedi}
+            srpski={"Галерија"}
+            engleski={"Gallery"}
+          />
         </Dugmici>
         {prijava}
       </menu>

@@ -27,8 +27,8 @@ body {
   z-index: -100; /* Keeps it behind content */
 }
 .logo {
-  width: 620px;
-  height: 220px;
+  width: 520px;
+  height: 200px;
   border-radius: 0;
 }
 .centrirajSliku {
@@ -95,13 +95,13 @@ body {
 }
 
 .donjiDeoDiv {
-  bottom: 0px;
+  position: absolute;
+  bottom: 0;
   left: 0;
   width: 100%;
   padding: 5px;
-  background-color: rgb(46, 60, 70, 0.5);
-
-  margin-bottom: 0;
+  background-color: rgba(46, 60, 70, 0.5);
+  z-index: 1000;
 }
 
 .divCentriranje {
@@ -178,7 +178,7 @@ body {
   justify-content: center;
   box-shadow: 2px 2px 4px #000000;
   align-items: center;
-
+  padding-top: 10px;
   width: auto;
   padding-left: 30px;
   padding-right: 30px;
@@ -188,6 +188,7 @@ body {
 }
 li {
   margin-top: 5px;
+  margin-left: -15px;
 }
 .sadrzaj {
   font-size: 24px;
@@ -544,6 +545,53 @@ iframe {
   margin-top: 10px;
   margin-bottom: 10px;
 }
+.galerijaDivDelovi {
+  margin-top: 10px;
+  gap: 15px;
+}
+.galerijaSpoljasnjiDiv {
+  margin-top: 15px;
+  padding: 15px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+  background-color: rgb(255, 255, 255, 0.8);
+  margin-bottom: 15px;
+}
+.galerijaUnutrasnjiDiv {
+  justify-content: center;
+  text-align: center;
+  align-content: center;
+  height: auto;
+}
+.galerijaVelikeSlike {
+  height: 350px;
+  width: 100%;
+  z-index: 1003;
+}
+.galerijaDivVelikeSlike {
+  position: relative;
+  width: 50%;
+  text-align: center;
+}
+
+.galerijaVelikeSlike:hover {
+  filter: brightness(40%) sepia(40%);
+}
+.galerijaTekst {
+  position: absolute;
+  width: 100%;
+  padding: 0 5px 0 5px;
+  font-size: 20px;
+  pointer-events: none;
+  background-color: rgb(0, 0, 0, 0.5);
+  font-size: 24px;
+  top: 45%;
+  color: white;
+  z-index: 1001;
+  overflow: hidden;
+}
+@media (hover: hover) and (pointer: fine) {
+}
 @media (max-width: 1080px) {
   .terminList {
     grid-template-columns: repeat(3, 1fr); /* 3 items per row */
@@ -668,9 +716,6 @@ iframe {
   padding: 5px;
 }
 @media (max-width: 768px) {
-  .terminList {
-    grid-template-columns: repeat(2, 1fr); /* 2 items per row */
-  }
   .imageSlideDiv {
     height: 350px;
     width: 95%;
@@ -779,7 +824,7 @@ ul {
   }
 
   .gornjiDeoDugmici {
-    font-size: 20px; /* Adjust text size */
+    font-size: 24px; /* Adjust text size */
     width: 100%; /* Make buttons full-width */
     margin: 5px 0; /* Add vertical spacing */
     text-align: left;
@@ -863,11 +908,71 @@ ul {
     font-size: 18px;
   }
 }
+@media (max-width: 600px) {
+  .galerijaSpoljasnjiDiv {
+    padding: 10px;
+    width: 100%;
+    height: auto;
+    margin: 15px 0 0 0;
+    gap: 0px;
+  }
+  .galerijaDivDelovi {
+    margin: 0px;
+    width: 100%;
+  }
+  .galerijaUnutrasnjiDiv {
+    height: 400px;
+    margin: 0px;
+    gap: 0px;
+  }
+  .galerijaVelikeSlike {
+    height: 230px;
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+  }
+  .galerijaDivVelikeSlike {
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    gap: 0px;
+  }
+}
 @media (max-width: 550px) {
   .logo {
     width: 350px;
   }
+  .galerijaSpoljasnjiDiv {
+    padding: 10px;
+    width: 100%;
+    height: auto;
+    margin: 15px 0 0 0;
+    gap: 0px;
+  }
+  .galerijaDivDelovi {
+    margin: 0px;
+    width: 100%;
+  }
+  .galerijaUnutrasnjiDiv {
+    height: 400px;
+    margin: 0px;
+    gap: 0px;
+  }
+  .galerijaVelikeSlike {
+    height: 230px;
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+  }
+  .galerijaDivVelikeSlike {
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    gap: 0px;
+  }
+
   .imageSlideDiv {
+    margin-top: 10px;
     height: 280px;
   }
 
@@ -1006,6 +1111,12 @@ ul {
     width: 100%;
     height: 200px;
     border: none;
+  }
+  .galerijaUnutrasnjiDiv {
+    height: 400px;
+  }
+  .galerijaVelikeSlike {
+    height: 200px;
   }
   .zakazivanjeDatum {
     font-size: 15px;
