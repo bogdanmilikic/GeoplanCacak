@@ -2,7 +2,12 @@ import { useEffect, useRef, useState } from "react";
 import Prevodilac from "./Prevodilac";
 import ReCAPTCHA from "react-google-recaptcha";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCheck } from "@fortawesome/free-solid-svg-icons";
+import {
+  faArrowRight,
+  faArrowRightArrowLeft,
+  faArrowRightFromBracket,
+  faCheck,
+} from "@fortawesome/free-solid-svg-icons";
 import emailjs from "@emailjs/browser";
 import Alert from "./Alert";
 
@@ -155,8 +160,6 @@ const Pitanje = ({ prevod, poruka, setPoruka, aktivno }) => {
           sitekey="6Lfsf_YqAAAAANTs7iyvELAqPgr_1JQybpV6fLcl"
           onChange={handleRecaptcha}
           size="compact"
-          badge="bottomleft"
-          data-storage="none"
         />
       </div>
       <br />
@@ -166,7 +169,7 @@ const Pitanje = ({ prevod, poruka, setPoruka, aktivno }) => {
         onClick={handlePitanje}
       >
         <Prevodilac prevod={prevod} srpski={"Пошаљи "} engleski={"Send "} />
-        <FontAwesomeIcon icon={faCheck} />
+        <FontAwesomeIcon icon={faArrowRightFromBracket} />
       </button>
     </div>
   );
