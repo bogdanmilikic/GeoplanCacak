@@ -17,14 +17,14 @@ const Galerija = ({ slike, prevod }) => {
       <div
         className="galerijaUnutrasnjiDiv"
         style={{
-          overflow: window.innerWidth <= 650 ? "scroll" : null,
+          overflow: typeof window !== "undefined" && window.innerWidth <= 650 ? "scroll" : null,
         }}
       >
         {/* prvi deo */}
         <div
           className="galerijaDivDelovi"
           style={{
-            display: window.innerWidth <= 650 ? "undefined" : "flex",
+            display:typeof window !== "undefined" && window.innerWidth <= 650? "undefined" : "flex",
             marginTop: "5px",
           }}
         >
@@ -74,7 +74,7 @@ const Galerija = ({ slike, prevod }) => {
         {/* drugi deo */}
         <div
           style={{
-            display: window.innerWidth <= 650 ? "undefined" : "flex",
+            display:typeof window !== "undefined" && window.innerWidth <= 650 ? "undefined" : "flex",
           }}
           className="galerijaDivDelovi"
         >
@@ -147,7 +147,7 @@ const Galerija = ({ slike, prevod }) => {
         {/* treci deo */}
         <div
           style={{
-            display: window.innerWidth <= 650 ? "undefined" : "flex",
+            display:typeof window !== "undefined" && window.innerWidth <= 650 ? "undefined" : "flex",
           }}
           className="galerijaDivDelovi"
         >
