@@ -2,15 +2,11 @@ import { useRef, useState } from "react";
 import Prevodilac from "./Prevodilac";
 
 const Galerija = ({ slike, prevod }) => {
-  const [prvaSlika, setPrvaSlika] = useState(false);
-  const [drugaSlika, setDrugaSlika] = useState(false);
-  const [trecaSlika, setTrecaSlika] = useState(false);
-  const [cetvrtaSlika, setCetvrtaSlika] = useState(false);
-  const [petaSlika, setPetaSlika] = useState(false);
-  const [sestaSlika, setSestaSlika] = useState(false);
-  const [sedmaSlika, setSedmaSlika] = useState(false);
-  const handlePrikaz = (istina, setIstina) => {
-    setIstina(!istina);
+  const [aktivnaSlika, setAktivnaSlika] = useState(0);
+  const [hover, setHover] = useState(false);
+  const handlePrikaz = (vrednost, setIstina) => {
+    setIstina(vrednost);
+    setHover(!hover);
   };
   return (
     <div className="galerijaSpoljasnjiDiv">
@@ -36,12 +32,12 @@ const Galerija = ({ slike, prevod }) => {
         >
           <div
             className="galerijaDivVelikeSlike"
-            onMouseEnter={() => handlePrikaz(prvaSlika, setPrvaSlika)}
-            onMouseLeave={() => handlePrikaz(prvaSlika, setPrvaSlika)}
-            onTouchStart={() => handlePrikaz(prvaSlika, setPrvaSlika)}
-            onTouchEnd={() => handlePrikaz(prvaSlika, setPrvaSlika)}
+            onMouseEnter={() => handlePrikaz(1, setAktivnaSlika)}
+            onMouseLeave={() => handlePrikaz(0, setAktivnaSlika)}
+            onTouchStart={() => handlePrikaz(1, setAktivnaSlika)}
+            onTouchEnd={() => handlePrikaz(0, setAktivnaSlika)}
           >
-            {prvaSlika === true ? (
+            {aktivnaSlika === 1 && hover ? (
               <p className="galerijaTekst">
                 <Prevodilac
                   srpski={"Израда катастарског-топографског плана Босиљеград"}
@@ -58,12 +54,12 @@ const Galerija = ({ slike, prevod }) => {
           </div>{" "}
           <div
             className="galerijaDivVelikeSlike"
-            onMouseEnter={() => handlePrikaz(drugaSlika, setDrugaSlika)}
-            onMouseLeave={() => handlePrikaz(drugaSlika, setDrugaSlika)}
-            onTouchStart={() => handlePrikaz(drugaSlika, setDrugaSlika)}
-            onTouchEnd={() => handlePrikaz(drugaSlika, setDrugaSlika)}
+            onMouseEnter={() => handlePrikaz(2, setAktivnaSlika)}
+            onMouseLeave={() => handlePrikaz(0, setAktivnaSlika)}
+            onTouchStart={() => handlePrikaz(2, setAktivnaSlika)}
+            onTouchEnd={() => handlePrikaz(0, setAktivnaSlika)}
           >
-            {drugaSlika === true ? (
+            {aktivnaSlika === 2 && hover ? (
               <p className="galerijaTekst">
                 <Prevodilac
                   srpski={"Крањска стаза UniPromet Чачак"}
@@ -89,12 +85,12 @@ const Galerija = ({ slike, prevod }) => {
         >
           <div
             className="galerijaDivVelikeSlike"
-            onMouseEnter={() => handlePrikaz(trecaSlika, setTrecaSlika)}
-            onMouseLeave={() => handlePrikaz(trecaSlika, setTrecaSlika)}
-            onTouchStart={() => handlePrikaz(trecaSlika, setTrecaSlika)}
-            onTouchEnd={() => handlePrikaz(trecaSlika, setTrecaSlika)}
+            onMouseEnter={() => handlePrikaz(3, setAktivnaSlika)}
+            onMouseLeave={() => handlePrikaz(0, setAktivnaSlika)}
+            onTouchStart={() => handlePrikaz(3, setAktivnaSlika)}
+            onTouchEnd={() => handlePrikaz(0, setAktivnaSlika)}
           >
-            {trecaSlika ? (
+            {aktivnaSlika === 3 && hover ? (
               <p className="galerijaTekst">
                 <Prevodilac
                   srpski={"Озакоњење стамбеног објекта"}
@@ -109,13 +105,13 @@ const Galerija = ({ slike, prevod }) => {
           </div>
           <div
             className="galerijaDivVelikeSlike"
-            onMouseEnter={() => handlePrikaz(cetvrtaSlika, setCetvrtaSlika)}
-            onMouseLeave={() => handlePrikaz(cetvrtaSlika, setCetvrtaSlika)}
-            onTouchStart={() => handlePrikaz(cetvrtaSlika, setCetvrtaSlika)}
-            onTouchEnd={() => handlePrikaz(cetvrtaSlika, setCetvrtaSlika)}
+            onMouseEnter={() => handlePrikaz(4, setAktivnaSlika)}
+            onMouseLeave={() => handlePrikaz(0, setAktivnaSlika)}
+            onTouchStart={() => handlePrikaz(4, setAktivnaSlika)}
+            onTouchEnd={() => handlePrikaz(0, setAktivnaSlika)}
           >
             {" "}
-            {cetvrtaSlika ? (
+            {aktivnaSlika === 4 && hover ? (
               <p className="galerijaTekst">
                 <Prevodilac
                   srpski={"Радови на изградњи рефлектора спортског терена"}
@@ -132,12 +128,12 @@ const Galerija = ({ slike, prevod }) => {
           </div>
           <div
             className="galerijaDivVelikeSlike"
-            onMouseEnter={() => handlePrikaz(petaSlika, setPetaSlika)}
-            onMouseLeave={() => handlePrikaz(petaSlika, setPetaSlika)}
-            onTouchStart={() => handlePrikaz(petaSlika, setPetaSlika)}
-            onTouchEnd={() => handlePrikaz(petaSlika, setPetaSlika)}
+            onMouseEnter={() => handlePrikaz(5, setAktivnaSlika)}
+            onMouseLeave={() => handlePrikaz(0, setAktivnaSlika)}
+            onTouchStart={() => handlePrikaz(5, setAktivnaSlika)}
+            onTouchEnd={() => handlePrikaz(0, setAktivnaSlika)}
           >
-            {petaSlika ? (
+            {aktivnaSlika === 5 && hover ? (
               <p className="galerijaTekst">
                 <Prevodilac
                   srpski={"Радови на снимању тунела цементаре Titan"}
@@ -165,12 +161,12 @@ const Galerija = ({ slike, prevod }) => {
         >
           <div
             className="galerijaDivVelikeSlike"
-            onMouseEnter={() => handlePrikaz(sestaSlika, setSestaSlika)}
-            onMouseLeave={() => handlePrikaz(sestaSlika, setSestaSlika)}
-            onTouchStart={() => handlePrikaz(sestaSlika, setSestaSlika)}
-            onTouchEnd={() => handlePrikaz(sestaSlika, setSestaSlika)}
+            onMouseEnter={() => handlePrikaz(6, setAktivnaSlika)}
+            onMouseLeave={() => handlePrikaz(0, setAktivnaSlika)}
+            onTouchStart={() => handlePrikaz(6, setAktivnaSlika)}
+            onTouchEnd={() => handlePrikaz(0, setAktivnaSlika)}
           >
-            {sestaSlika ? (
+            {aktivnaSlika === 6 && hover ? (
               <p className="galerijaTekst">
                 <Prevodilac
                   srpski={"Радови на снимању водотока Западне Мораве"}
@@ -185,12 +181,12 @@ const Galerija = ({ slike, prevod }) => {
           </div>
           <div
             className="galerijaDivVelikeSlike"
-            onMouseEnter={() => handlePrikaz(sedmaSlika, setSedmaSlika)}
-            onMouseLeave={() => handlePrikaz(sedmaSlika, setSedmaSlika)}
-            onTouchStart={() => handlePrikaz(sedmaSlika, setSedmaSlika)}
-            onTouchEnd={() => handlePrikaz(sedmaSlika, setSedmaSlika)}
+            onMouseEnter={() => handlePrikaz(7, setAktivnaSlika)}
+            onMouseLeave={() => handlePrikaz(0, setAktivnaSlika)}
+            onTouchStart={() => handlePrikaz(7, setAktivnaSlika)}
+            onTouchEnd={() => handlePrikaz(0, setAktivnaSlika)}
           >
-            {sedmaSlika ? (
+            {aktivnaSlika === 7 && hover ? (
               <p className="galerijaTekst">
                 <Prevodilac
                   srpski={"Тунел у оквиру ауто-пута Милош Велики"}
