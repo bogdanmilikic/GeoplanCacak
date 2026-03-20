@@ -22,7 +22,11 @@ const DonjiDeo = ({ pozicija }) => {
         >
           <center>
             {" "}
-            <img src="GeoPlanLogo.png" style={{ width: "140px" }} />
+            <img
+              src="GeoPlanLogo.png"
+              style={{ width: "140px" }}
+              alt="Nema slike"
+            />
           </center>
         </div>
         <div

@@ -4,7 +4,7 @@ import {
   faX,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const Alert = ({ uspesno, poruka, setOpen }) => {
   const [animacija, setAnimacija] = useState("alertObavestenjeUlaz");

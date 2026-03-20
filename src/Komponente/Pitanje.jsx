@@ -2,12 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import Prevodilac from "./Prevodilac";
 import ReCAPTCHA from "react-google-recaptcha";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faArrowRight,
-  faArrowRightArrowLeft,
-  faArrowRightFromBracket,
-  faCheck,
-} from "@fortawesome/free-solid-svg-icons";
+import { faArrowRightFromBracket } from "@fortawesome/free-solid-svg-icons";
 import emailjs from "@emailjs/browser";
 import Alert from "./Alert";
 

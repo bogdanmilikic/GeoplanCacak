@@ -567,6 +567,7 @@ iframe {
   height: 350px;
   width: 100%;
   z-index: 1003;
+  pointer-events: none;
 }
 .galerijaDivVelikeSlike {
   position: relative;
@@ -574,7 +575,10 @@ iframe {
   text-align: center;
 }
 
-.galerijaVelikeSlike:hover {
+.galerijaDivVelikeSlike:hover .galerijaTekst {
+  opacity: 1;
+}
+.galerijaDivVelikeSlike:hover .galerijaVelikeSlike {
   filter: brightness(40%) sepia(40%);
 }
 .galerijaTekst {
@@ -589,6 +593,7 @@ iframe {
   color: white;
   z-index: 1001;
   overflow: hidden;
+  opacity: 0;
 }
 @media (hover: hover) and (pointer: fine) {
 }
