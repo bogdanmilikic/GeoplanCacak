@@ -86,7 +86,8 @@ function App() {
         milan.geoplan@gmail.com
         <br />
         <FontAwesomeIcon icon={faPhone} style={{ marginTop: "10px" }} />{" "}
-        Тел/Факс - 032/341 368 /// 064/133 71 58
+        <Prevodilac srpski={"Тел/Факс"} engleski={"Tel/Fax"} prevod={prevedi} />{" "}
+        - 032/341 368 /// 064/133 71 58
         <br />
         <FontAwesomeIcon
           icon={faStreetView}

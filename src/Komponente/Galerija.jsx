@@ -24,7 +24,7 @@ const Galerija = ({ slike, prevod }) => {
           <div className="galerijaDivVelikeSlike">
             <p className="galerijaTekst">
               <Prevodilac
-                srpski={"Израда катастарског-топографског плана Босиљеград"}
+                srpski={"Израда катастарског-топографског плана Босилеград"}
                 engleski={
                   "Development of the cadastral-topographic plan for Bosilegrad"
                 }
